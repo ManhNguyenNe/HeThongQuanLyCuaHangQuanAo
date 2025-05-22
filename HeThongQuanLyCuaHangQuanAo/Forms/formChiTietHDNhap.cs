@@ -49,7 +49,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 {
                     var item = new ListViewItem(chiTiet.MaQuanAo);
                     item.SubItems.Add(chiTiet.TenQuanAo);
-                    item.SubItems.Add(string.Format("{0:N0} VNĐ", chiTiet.DonGiaBan));
+                    item.SubItems.Add(string.Format("{0:N0} VNĐ", chiTiet.DonGiaNhap));
                     item.SubItems.Add(chiTiet.SoLuong.ToString());
                     materialListView1.Items.Add(item);
 

@@ -43,10 +43,6 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                 if (sanPham.SoLuong < chiTiet.SoLuong)
                     throw new Exception($"Số lượng sản phẩm '{sanPham.TenQuanAo}' trong kho không đủ. Hiện chỉ còn {sanPham.SoLuong}");
 
-                // Tính thành tiền
-                chiTiet.ThanhTien = sanPham.DonGiaBan * chiTiet.SoLuong;
-
-                // Thêm chi tiết hóa đơn
                 return _dal.InsertChiTietHDBan(chiTiet);
             }
             catch (Exception)
@@ -82,9 +78,6 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
 
                     if (sanPham.SoLuong < chiTiet.SoLuong)
                         throw new Exception($"Số lượng sản phẩm '{sanPham.TenQuanAo}' trong kho không đủ. Hiện chỉ còn {sanPham.SoLuong}");
-
-                    // Tính thành tiền cho từng chi tiết
-                    chiTiet.ThanhTien = sanPham.DonGiaBan * chiTiet.SoLuong;
                 }
 
                 // Thêm chi tiết hóa đơn

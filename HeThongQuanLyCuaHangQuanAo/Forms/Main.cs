@@ -174,19 +174,15 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             }
 
             // Thêm xử lý cho tab đăng xuất
-            materialTabControl1.Selected += materialTabControl1_Selected;
+            materialTabControl1.Selecting += materialTabControl1_Selecting;
         }
 
-        private bool isLoggingOut = false; // Biến cờ để kiểm soát quá trình đăng xuất
-        private void materialTabControl1_Selected(object sender, TabControlEventArgs e)
+        private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (e.TabPage == tpDangXuat && !isLoggingOut)
+            if (e.TabPage == tpDangXuat)
             {
-                // Ngăn chặn việc chuyển đến tab đăng xuất bằng cách chuyển về tab trang chủ
-                materialTabControl1.SelectedTab = tpTrangChu;
-
-                // Đặt cờ đăng xuất để tránh hiển thị hộp thoại nhiều lần
-                isLoggingOut = true;
+                // Hủy việc chọn tab đăng xuất
+                e.Cancel = true;
 
                 // Xử lý đăng xuất
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?",
@@ -194,9 +190,6 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
                 if (result == DialogResult.Yes)
                 {
-                    // Gỡ bỏ sự kiện Selected để tránh kích hoạt lại
-                    materialTabControl1.Selected -= materialTabControl1_Selected;
-
                     // Xóa thông tin phiên đăng nhập
                     UserSession.ClearSession();
 
@@ -206,13 +199,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                     loginForm.FormClosed += (s, args) => this.Close();
                     loginForm.Show();
                 }
-                else
-                {
-                    // Đặt lại cờ đăng xuất nếu người dùng hủy
-                    isLoggingOut = false;
-                }
             }
         }
-
     }
 }

@@ -14,9 +14,9 @@ namespace HeThongQuanLyCuaHangQuanAo.ViewModels
         public DateTime NgayNhap { get; set; }
         public string MaQuanAo { get; set; }
         public string TenQuanAo { get; set; }
-        public decimal DonGiaBan { get; set; }
+        public decimal DonGiaNhap { get; set; }
         public int SoLuong { get; set; }
         public decimal GiamGia { get; set; }
-        public decimal ThanhTien { get; set; }
+        public decimal ThanhTien => DonGiaNhap * SoLuong;
     }
 }

@@ -13,6 +13,7 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
     {
         private readonly HDNhapDAL _hoaDonNhapDAL = new HDNhapDAL();
         private readonly ChiTietHDNhapDAL _chiTietHDNhapDAL = new ChiTietHDNhapDAL();
+        private readonly SanPhamBUS _sanPhamBUS = new SanPhamBUS();
 
         public List<HDNhapView> GetAllHDNhap()
         {
@@ -47,14 +48,21 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                     }
                 }
 
+                // Tính tổng tiền trước khi giảm giá
                 decimal tongTienTruocGiam = 0;
                 foreach (var chiTiet in chiTietList)
                 {
-                    tongTienTruocGiam += chiTiet.ThanhTien;
+                    var sanPham = _sanPhamBUS.GetSanPhamById(chiTiet.MaQuanAo);
+                    if (sanPham == null)
+                        throw new Exception($"Không tìm thấy thông tin sản phẩm {chiTiet.MaQuanAo}");
+                    
+                    tongTienTruocGiam += sanPham.DonGiaNhap * chiTiet.SoLuong;
                 }
 
+                // Áp dụng giảm giá cho toàn bộ hóa đơn
                 decimal tongTienSauGiam = tongTienTruocGiam * (1 - giamGia / 100);
 
+                // Tạo hóa đơn
                 HoaDonNhap hoaDon = new HoaDonNhap
                 {
                     SoHDN = soHDN,
@@ -65,10 +73,12 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                     TongTien = tongTienSauGiam
                 };
 
+                // Lưu hóa đơn
                 bool success = _hoaDonNhapDAL.InsertHoaDonNhap(hoaDon);
                 if (!success)
                     return false;
 
+                // Lưu chi tiết hóa đơn
                 success = _chiTietHDNhapDAL.InsertChiTietHDNhapList(chiTietList);
 
                 return success;
@@ -105,7 +115,7 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                 {
                     throw new Exception("Đạt giới hạn mã hóa đơn");
                 }
-                return $"HDB{(currentNumber + 1):0000}";
+                return $"HDN{(currentNumber + 1):0000}";
             }
 
             throw new Exception("Mã hóa đơn không hợp lệ");

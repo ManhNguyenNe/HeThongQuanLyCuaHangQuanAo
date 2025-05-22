@@ -21,7 +21,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         private KhachHangBUS _khachHangBUS = new KhachHangBUS();
         private List<tempChiTietHoaDonBan> _gioHang = new List<tempChiTietHoaDonBan>();
         private decimal _tongTien = 0;
-        private string _maNhanVien = "NV001";
+        private string _maNhanVien = UserSession.MaNV;
 
         public XuatHang()
         {
@@ -63,9 +63,10 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 TenHienThi = $"{kh.MaKhach} - {kh.TenKhach}"
             }).ToList();
 
-            cbMaKH.DataSource = danhSachHienThi;
+            cbMaKH.DataSource = null; // Xóa DataSource cũ
             cbMaKH.DisplayMember = "TenHienThi";  // Hiển thị cả mã và tên
             cbMaKH.ValueMember = "MaKhach";       // Giá trị vẫn là mã khách hàng
+            cbMaKH.DataSource = danhSachHienThi; // Gán DataSource mới
         }
 
         private void btnThemSP_Click(object sender, EventArgs e)
@@ -237,8 +238,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                     {
                         SoHDB = "", // Để trống, sẽ được tạo tự động trong TaoHoaDonBan
                         MaQuanAo = item.MaQuanAo,
-                        SoLuong = item.SoLuong,
-                        ThanhTien = item.ThanhTien
+                        SoLuong = item.SoLuong
                     };
                     chiTietList.Add(chiTiet);
                 }

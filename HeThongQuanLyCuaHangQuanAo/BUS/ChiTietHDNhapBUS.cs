@@ -37,11 +37,6 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                 if (sanPham == null)
                     throw new Exception("Sản phẩm không tồn tại");
 
-                //if (sanPham.SoLuong < chiTiet.SoLuong)
-                //    throw new Exception($"Số lượng sản phẩm '{sanPham.TenQuanAo}' trong kho không đủ. Hiện chỉ còn {sanPham.SoLuong}");
-
-                chiTiet.ThanhTien = sanPham.DonGiaBan * chiTiet.SoLuong;
-
                 return _dal.InsertChiTietHDNhap(chiTiet);
             }
             catch (Exception)
@@ -71,11 +66,6 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                     var sanPham = _sanPhamBUS.GetSanPhamById(chiTiet.MaQuanAo);
                     if (sanPham == null)
                         throw new Exception("Sản phẩm không tồn tại");
-
-                    //if (sanPham.SoLuong < chiTiet.SoLuong)
-                    //    throw new Exception($"Số lượng sản phẩm '{sanPham.TenQuanAo}' trong kho không đủ. Hiện chỉ còn {sanPham.SoLuong}");
-
-                    chiTiet.ThanhTien = sanPham.DonGiaBan * chiTiet.SoLuong;
                 }
 
                 return _dal.InsertChiTietHDNhapList(chiTietList);

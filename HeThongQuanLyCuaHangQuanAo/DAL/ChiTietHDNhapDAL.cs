@@ -17,7 +17,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
             string query = @"
         SELECT ct.SoHDN, hdn.NgayNhap, nv.TenNV, ncc.TenNCC, 
                ct.MaQuanAo, sp.TenQuanAo, sp.DonGiaNhap, ct.SoLuong, 
-               hdn.GiamGia, ct.ThanhTien
+               hdn.GiamGia
         FROM ChiTietHDNhap ct
         JOIN SanPham sp ON ct.MaQuanAo = sp.MaQuanAo
         JOIN HoaDonNhap hdn ON ct.SoHDN = hdn.SoHDN
@@ -42,10 +42,9 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             TenNCC = reader["TenNCC"].ToString(),
                             MaQuanAo = reader["MaQuanAo"].ToString(),
                             TenQuanAo = reader["TenQuanAo"].ToString(),
-                            DonGiaBan = Convert.ToDecimal(reader["DonGiaNhap"]),
+                            DonGiaNhap = Convert.ToDecimal(reader["DonGiaNhap"]),
                             SoLuong = Convert.ToInt32(reader["SoLuong"]),
                             GiamGia = Convert.ToDecimal(reader["GiamGia"]),
-                            ThanhTien = Convert.ToDecimal(reader["ThanhTien"])
                         };
                         list.Add(ctView);
                     }
@@ -57,8 +56,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
         public bool InsertChiTietHDNhap(ChiTietHDNhap chiTiet)
         {
             string query = @"
-        INSERT INTO ChiTietHDNhap (SoHDN, MaQuanAo, SoLuong, ThanhTien)
-        VALUES (@SoHDN, @MaQuanAo, @SoLuong, @ThanhTien)";
+        INSERT INTO ChiTietHDNhap (SoHDN, MaQuanAo, SoLuong)
+        VALUES (@SoHDN, @MaQuanAo, @SoLuong)";
 
             using (SqlConnection conn = DBHelper.GetConnection())
             using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -66,7 +65,6 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                 cmd.Parameters.AddWithValue("@SoHDN", chiTiet.SoHDN);
                 cmd.Parameters.AddWithValue("@MaQuanAo", chiTiet.MaQuanAo);
                 cmd.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
-                cmd.Parameters.AddWithValue("@ThanhTien", chiTiet.ThanhTien);
 
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
@@ -84,8 +82,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                     try
                     {
                         string insertChiTietQuery = @"
-                    INSERT INTO ChiTietHDNhap (SoHDN, MaQuanAo, SoLuong, ThanhTien)
-                    VALUES (@SoHDN, @MaQuanAo, @SoLuong, @ThanhTien)";
+                    INSERT INTO ChiTietHDNhap (SoHDN, MaQuanAo, SoLuong)
+                    VALUES (@SoHDN, @MaQuanAo, @SoLuong)";
 
                         foreach (var chiTiet in chiTietList)
                         {
@@ -94,7 +92,6 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                                 cmd.Parameters.AddWithValue("@SoHDN", chiTiet.SoHDN);
                                 cmd.Parameters.AddWithValue("@MaQuanAo", chiTiet.MaQuanAo);
                                 cmd.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
-                                cmd.Parameters.AddWithValue("@ThanhTien", chiTiet.ThanhTien);
                                 cmd.ExecuteNonQuery();
                             }
 
@@ -146,9 +143,10 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
         {
             decimal tongTien = 0;
             string query = @"
-                SELECT SUM(ThanhTien) AS TongTien
-                FROM ChiTietHDNhap
-                WHERE SoHDN = @SoHDN";
+                SELECT SUM(sp.DonGiaNhap * ct.SoLuong) AS TongTien
+                FROM ChiTietHDNhap ct
+                JOIN SanPham sp ON ct.MaQuanAo = sp.MaQuanAo
+                WHERE ct.SoHDN = @SoHDN";
 
             using (SqlConnection conn = DBHelper.GetConnection())
             using (SqlCommand cmd = new SqlCommand(query, conn))

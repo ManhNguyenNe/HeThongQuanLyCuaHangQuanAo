@@ -65,7 +65,6 @@
             this.materialTabControl1.SelectedIndex = 0;
             this.materialTabControl1.Size = new System.Drawing.Size(1194, 733);
             this.materialTabControl1.TabIndex = 0;
-            this.materialTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.materialTabControl1_Selected);
             // 
             // tpTrangChu
             // 

@@ -13,6 +13,7 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
     {
         private readonly HDBanDAL _hoaDonBanDAL = new HDBanDAL();
         private readonly ChiTietHDBanDAL _chiTietHDBanDAL = new ChiTietHDBanDAL();
+        private readonly SanPhamBUS _sanPhamBUS = new SanPhamBUS();
 
         // Lấy tất cả hóa đơn bán
         public List<HDBanView> GetAllHDBan()
@@ -53,7 +54,11 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                 decimal tongTienTruocGiam = 0;
                 foreach (var chiTiet in chiTietList)
                 {
-                    tongTienTruocGiam += chiTiet.ThanhTien;
+                    var sanPham = _sanPhamBUS.GetSanPhamById(chiTiet.MaQuanAo);
+                    if (sanPham == null)
+                        throw new Exception($"Không tìm thấy thông tin sản phẩm {chiTiet.MaQuanAo}");
+                    
+                    tongTienTruocGiam += sanPham.DonGiaBan * chiTiet.SoLuong;
                 }
 
                 // Áp dụng giảm giá cho toàn bộ hóa đơn

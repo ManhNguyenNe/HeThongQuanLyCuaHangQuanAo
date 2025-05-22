@@ -18,7 +18,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
             string query = @"
         SELECT ct.SoHDB, hdb.NgayBan, nv.TenNV, kh.TenKhach, 
                ct.MaQuanAo, sp.TenQuanAo, sp.DonGiaBan, ct.SoLuong, 
-               hdb.GiamGia, ct.ThanhTien
+               hdb.GiamGia
         FROM ChiTietHDBan ct
         JOIN SanPham sp ON ct.MaQuanAo = sp.MaQuanAo
         JOIN HoaDonBan hdb ON ct.SoHDB = hdb.SoHDB
@@ -46,7 +46,6 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"]),
                             SoLuong = Convert.ToInt32(reader["SoLuong"]),
                             GiamGia = Convert.ToDecimal(reader["GiamGia"]),
-                            ThanhTien = Convert.ToDecimal(reader["ThanhTien"])
                         };
                         list.Add(ctView);
                     }
@@ -59,8 +58,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
         public bool InsertChiTietHDBan(ChiTietHDBan chiTiet)
         {
             string query = @"
-        INSERT INTO ChiTietHDBan (SoHDB, MaQuanAo, SoLuong, ThanhTien)
-        VALUES (@SoHDB, @MaQuanAo, @SoLuong, @ThanhTien)";
+        INSERT INTO ChiTietHDBan (SoHDB, MaQuanAo, SoLuong)
+        VALUES (@SoHDB, @MaQuanAo, @SoLuong)";
 
             using (SqlConnection conn = DBHelper.GetConnection())
             using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -68,7 +67,6 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                 cmd.Parameters.AddWithValue("@SoHDB", chiTiet.SoHDB);
                 cmd.Parameters.AddWithValue("@MaQuanAo", chiTiet.MaQuanAo);
                 cmd.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
-                cmd.Parameters.AddWithValue("@ThanhTien", chiTiet.ThanhTien);
 
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
@@ -87,8 +85,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                     try
                     {
                         string insertChiTietQuery = @"
-                    INSERT INTO ChiTietHDBan (SoHDB, MaQuanAo, SoLuong, ThanhTien)
-                    VALUES (@SoHDB, @MaQuanAo, @SoLuong, @ThanhTien)";
+                    INSERT INTO ChiTietHDBan (SoHDB, MaQuanAo, SoLuong)
+                    VALUES (@SoHDB, @MaQuanAo, @SoLuong)";
 
                         foreach (var chiTiet in chiTietList)
                         {
@@ -97,7 +95,6 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                                 cmd.Parameters.AddWithValue("@SoHDB", chiTiet.SoHDB);
                                 cmd.Parameters.AddWithValue("@MaQuanAo", chiTiet.MaQuanAo);
                                 cmd.Parameters.AddWithValue("@SoLuong", chiTiet.SoLuong);
-                                cmd.Parameters.AddWithValue("@ThanhTien", chiTiet.ThanhTien);
                                 cmd.ExecuteNonQuery();
                             }
 

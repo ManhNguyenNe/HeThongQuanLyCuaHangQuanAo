@@ -11,6 +11,5 @@ namespace HeThongQuanLyCuaHangQuanAo.Models
         public string SoHDB { get; set; }
         public string MaQuanAo { get; set; }
         public int SoLuong { get; set; }
-        public decimal ThanhTien { get; set; }
     }
 }

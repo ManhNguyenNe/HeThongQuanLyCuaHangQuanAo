@@ -20,7 +20,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         private NCCBUS _nccBUS = new NCCBUS();
         private List<tempChiTietHoaDonNhap> _gioHang = new List<tempChiTietHoaDonNhap>();
         private decimal _tongTien = 0;
-        private string _maNhanVien = "NV001";
+        private string _maNhanVien = UserSession.MaNV;
 
         public NhapHang()
         {
@@ -54,15 +54,17 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         {
             var danhSachNCC = _nccBUS.GetAll();
 
+            // Tạo danh sách mới với các đối tượng ẩn danh
             var danhSachHienThi = danhSachNCC.Select(ncc => new
             {
                 MaNCC = ncc.MaNCC,
                 TenHienThi = $"{ncc.MaNCC} - {ncc.TenNCC}"
             }).ToList();
 
-            cbMaNCC.DataSource = danhSachHienThi;
-            cbMaNCC.DisplayMember = "TenHienThi";
-            cbMaNCC.ValueMember = "MaNCC"; 
+            cbMaNCC.DataSource = null; // Xóa DataSource cũ
+            cbMaNCC.DisplayMember = "TenHienThi";  // Hiển thị cả mã và tên
+            cbMaNCC.ValueMember = "MaNCC";       // Giá trị vẫn là mã nhà cung cấp
+            cbMaNCC.DataSource = danhSachHienThi; // Gán DataSource mới
         }
 
         private void btnThemSP_Click(object sender, EventArgs e)
@@ -93,7 +95,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             if (existingItem != null)
             {
                 existingItem.SoLuong += soLuong;
-                existingItem.ThanhTien = existingItem.SoLuong * sanPham.DonGiaBan;
+                existingItem.ThanhTien = existingItem.SoLuong * sanPham.DonGiaNhap;
             }
             else
             {
@@ -106,7 +108,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                     Mau = materialListView1.SelectedItems[0].SubItems[3].Text,
                     DonGiaNhap = sanPham.DonGiaNhap,
                     SoLuong = soLuong,
-                    ThanhTien = soLuong * sanPham.DonGiaBan
+                    ThanhTien = soLuong * sanPham.DonGiaNhap
                 };
                 _gioHang.Add(chiTiet);
             }
@@ -223,7 +225,6 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                         SoHDN = "", // Để trống, sẽ được tạo tự động trong TaoHoaDonBan
                         MaQuanAo = item.MaQuanAo,
                         SoLuong = item.SoLuong,
-                        ThanhTien = item.ThanhTien
                     };
                     chiTietList.Add(chiTiet);
                 }
