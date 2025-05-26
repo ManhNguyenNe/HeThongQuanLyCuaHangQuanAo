@@ -245,6 +245,19 @@
             this.clnTinhTrang.Text = "Tình trạng";
             this.clnTinhTrang.Width = 100;
             // 
+            // btnXuatThongTinNV
+            // 
+            this.btnXuatThongTinNV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnXuatThongTinNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXuatThongTinNV.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnXuatThongTinNV.Location = new System.Drawing.Point(829, 11);
+            this.btnXuatThongTinNV.Name = "btnXuatThongTinNV";
+            this.btnXuatThongTinNV.Size = new System.Drawing.Size(112, 44);
+            this.btnXuatThongTinNV.TabIndex = 11;
+            this.btnXuatThongTinNV.Text = "Xuất Thông Tin";
+            this.btnXuatThongTinNV.UseVisualStyleBackColor = false;
+            this.btnXuatThongTinNV.Click += new System.EventHandler(this.btnXuatThongTinNV_Click);
+            // 
             // ucNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
