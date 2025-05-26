@@ -1,19 +1,41 @@
-﻿using System;
+using HeThongQuanLyCuaHangQuanAo.BUS;
+using HeThongQuanLyCuaHangQuanAo.DAL;
+using HeThongQuanLyCuaHangQuanAo.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HeThongQuanLyCuaHangQuanAo.Models;
-using HeThongQuanLyCuaHangQuanAo.BUS;
+using System.Xml.Linq;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+
 
 namespace HeThongQuanLyCuaHangQuanAo.Forms
 {
     public partial class ucKhachHang : UserControl
     {
+        private List<KhachHang> LayDanhSachTuListView()
+{
+    List<KhachHang> ds = new List<KhachHang>();
+    foreach (ListViewItem item in materialListView1.Items)
+    {
+        ds.Add(new KhachHang
+        {
+            MaKhach = item.SubItems[0].Text,
+            TenKhach = item.SubItems[1].Text,
+            DiaChi = item.SubItems[2].Text,
+            DienThoai = item.SubItems[3].Text
+        });
+    }
+    return ds;
+}
         private KhachHangBUS khachHangBUS = new KhachHangBUS();
         public ucKhachHang()
         {
@@ -84,5 +106,74 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 materialListView1.Items.Add(item);
             }
         }
+                private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnXuatPDF_Click(object sender, EventArgs e)
+        {
+            List<KhachHang> danhSach = LayDanhSachTuListView();
+
+            string folderPath = @"C:\Dulieukhachhang";
+            Directory.CreateDirectory(folderPath);
+
+            foreach (var kh in danhSach)
+            {
+                string filePath = Path.Combine(folderPath, $"{kh.MaKhach}_{kh.TenKhach}.pdf");
+                using (FileStream stream = new FileStream(filePath, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 10, 10, 10, 10);
+                    PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    pdfDoc.Add(new Paragraph($"MaKhach: {kh.MaKhach}"));
+                    pdfDoc.Add(new Paragraph($"TenKhach: {kh.TenKhach}"));
+                    pdfDoc.Add(new Paragraph($"DiaChi: {kh.DiaChi}"));
+                    pdfDoc.Add(new Paragraph($"SDT: {kh.DienThoai}"));
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+            }
+
+            MessageBox.Show("Đã xuất thông tin khách hàng ra file PDF!");
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        
+        public static void ExportCustomerToPDF(string tenKhachHang, string diaChi, string soDienThoai, string path)
+        {
+            Document document = new Document();
+            PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
+            document.Open();
+
+            document.Add(new Paragraph("Thông tin khách hàng"));
+            document.Add(new Paragraph("Tên: " + tenKhachHang));
+            document.Add(new Paragraph("Địa chỉ: " + diaChi));
+            document.Add(new Paragraph("SĐT: " + soDienThoai));
+
+            document.Close();
+        }
+
+
+        public static void ExportAllCustomersToPDFs(List<KhachHang> danhSachKhachHang, string thuMucXuat)
+        {
+
+            if (!Directory.Exists(thuMucXuat))
+                Directory.CreateDirectory(thuMucXuat);
+
+            foreach (var kh in danhSachKhachHang)
+            {
+                string fileName = $"KhachHang_{kh.MaKhach}.pdf";
+                string filePath = Path.Combine(thuMucXuat, fileName);
+
+                ExportCustomerToPDF(kh.TenKhach, kh.DiaChi, kh.DienThoai, filePath);
+            }
+        }
     }
 }
+    
+
