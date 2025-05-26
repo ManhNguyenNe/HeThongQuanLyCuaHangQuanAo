@@ -1,13 +1,19 @@
-﻿using System;
+using HeThongQuanLyCuaHangQuanAo.BUS;
+using HeThongQuanLyCuaHangQuanAo.DAL;
+using HeThongQuanLyCuaHangQuanAo.Models;
+using HeThongQuanLyCuaHangQuanAo.ViewModels;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HeThongQuanLyCuaHangQuanAo.BUS;
 
 namespace HeThongQuanLyCuaHangQuanAo.Forms
 {
@@ -84,5 +90,105 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 LoadData();
             }
         }
+                private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            if (materialListView1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn một hóa đơn để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string folderPath = @"C:\HoaDonNhap\";
+
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+
+            ListViewItem selectedItem = materialListView1.SelectedItems[0];
+            string soHD = selectedItem.SubItems[0].Text;
+
+            var chiTietDAL = new ChiTietHDNhapDAL();
+            var chiTiets = chiTietDAL.GetChiTietByHDNhapID(soHD);
+
+            if (chiTiets.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy chi tiết hóa đơn.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var first = chiTiets[0];
+            Document doc = new Document(PageSize.A4);
+            string fileName = Path.Combine(folderPath, $"HoaDonNhap_{soHD}.pdf");
+
+            using (FileStream fs = new FileStream(fileName, FileMode.Create))
+            {
+                PdfWriter.GetInstance(doc, fs);
+                doc.Open();
+
+                var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
+                var bodyFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+
+                doc.Add(new Paragraph("HOA DON NHAP HANG", titleFont));
+                doc.Add(new Paragraph(" "));
+
+                doc.Add(new Paragraph($"So HD: {first.SoHDN}", bodyFont));
+                doc.Add(new Paragraph($"Ngay nhap: {first.NgayNhap:dd/MM/yyyy}", bodyFont));
+                doc.Add(new Paragraph($"Nhan vien: {first.TenNV}", bodyFont));
+                doc.Add(new Paragraph($"Nha cung cap: {first.TenNCC}", bodyFont));
+                doc.Add(new Paragraph(" "));
+
+                PdfPTable table = new PdfPTable(5);
+                table.WidthPercentage = 100;
+                table.SetWidths(new float[] { 20, 35, 15, 15, 15 });
+
+                AddCell(table, "Ma quan ao", true);
+                AddCell(table, "Ten quan ao", true);
+                AddCell(table, "Don gia", true);
+                AddCell(table, "So luong", true);
+                AddCell(table, "Thanh tien", true);
+
+                decimal tongTien = 0;
+
+                foreach (var ct in chiTiets)
+                {
+                    decimal thanhTien = ct.DonGiaNhap * ct.SoLuong;
+                    tongTien += thanhTien;
+
+                    AddCell(table, ct.MaQuanAo);
+                    AddCell(table, ct.TenQuanAo);
+                    AddCell(table, ct.DonGiaNhap.ToString("N0") + " VNĐ");
+                    AddCell(table, ct.SoLuong.ToString());
+                    AddCell(table, thanhTien.ToString("N0") + " VNĐ");
+                }
+
+                doc.Add(table);
+                doc.Add(new Paragraph(" "));
+
+                decimal giamGia = first.GiamGia;
+                decimal thanhToan = tongTien - giamGia;
+
+                doc.Add(new Paragraph($"Tong tien: {tongTien:N0} VNĐ", bodyFont));
+                doc.Add(new Paragraph($"Giam gia: {giamGia:N0} VNĐ", bodyFont));
+                doc.Add(new Paragraph($"Thanh tien: {thanhToan:N0} VNĐ", bodyFont));
+
+                doc.Close();
+            }
+
+            MessageBox.Show($"Xuất PDF thành công tại:\n{fileName}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private void AddCell(PdfPTable table, string text, bool isHeader = false)
+        {
+            var font = isHeader ? FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12) : FontFactory.GetFont(FontFactory.HELVETICA, 11);
+            var cell = new PdfPCell(new Phrase(text, font));
+            cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            cell.Padding = 5;
+            if (isHeader) cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+            table.AddCell(cell);
+        }
+
     }
 }
+    
+
