@@ -244,5 +244,6 @@
         private System.Windows.Forms.ColumnHeader clnTenKhach;
         private System.Windows.Forms.ColumnHeader clnDiaChi;
         private System.Windows.Forms.ColumnHeader clnSDT;
+        private System.Windows.Forms.Button btnXuatHoaDonBan;
     }
 }
