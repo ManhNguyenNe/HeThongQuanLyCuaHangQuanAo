@@ -244,6 +244,9 @@
         private System.Windows.Forms.ColumnHeader clnTenKhach;
         private System.Windows.Forms.ColumnHeader clnDiaChi;
         private System.Windows.Forms.ColumnHeader clnSDT;
-        private System.Windows.Forms.Button btnXuatHoaDonBan;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private System.Windows.Forms.Button btnXuatPDF;
+        private System.Windows.Forms.DataGridView dgvKhachHang;
+      
     }
 }
