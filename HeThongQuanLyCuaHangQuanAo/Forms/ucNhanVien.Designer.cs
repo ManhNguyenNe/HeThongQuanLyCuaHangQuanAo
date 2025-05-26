@@ -277,5 +277,6 @@
         private System.Windows.Forms.ColumnHeader clnDiaChi;
         private System.Windows.Forms.ColumnHeader clnCongViec;
         private System.Windows.Forms.ColumnHeader clnTinhTrang;
+        private System.Windows.Forms.Button btnXuatThongTinNV;
     }
 }
