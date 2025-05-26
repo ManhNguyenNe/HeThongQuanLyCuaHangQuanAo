@@ -246,5 +246,6 @@
         private System.Windows.Forms.ColumnHeader clnMaKhach;
         private System.Windows.Forms.ColumnHeader clnTenKhach;
         private System.Windows.Forms.ColumnHeader clnTongTien;
+        private System.Windows.Forms.Button btnXuatHoaDonBan;
     }
 }
