@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialTextBox2();
@@ -39,9 +40,19 @@
             this.clnTenKhach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnDiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnSDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnXuatPDF = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // dgvKhachHang
+            // 
+            this.dgvKhachHang.Location = new System.Drawing.Point(4, 300);
+            this.dgvKhachHang.Name = "dgvKhachHang";
+            this.dgvKhachHang.Size = new System.Drawing.Size(1013, 102);
+            this.dgvKhachHang.TabIndex = 0;
+         
             // 
             // tableLayoutPanel1
             // 
@@ -215,6 +226,21 @@
             // 
             this.clnSDT.Text = "Số điện thoại";
             this.clnSDT.Width = 150;
+            // 
+            // btnXuatPDF
+            // 
+            this.btnXuatPDF.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnXuatPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXuatPDF.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.btnXuatPDF.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnXuatPDF.Location = new System.Drawing.Point(692, 13);
+            this.btnXuatPDF.Name = "btnXuatPDF";
+            this.btnXuatPDF.Size = new System.Drawing.Size(98, 42);
+            this.btnXuatPDF.TabIndex = 6;
+            this.btnXuatPDF.Text = "Xuất PDF";
+            this.btnXuatPDF.UseVisualStyleBackColor = false;
+            this.btnXuatPDF.UseWaitCursor = true;
+            this.btnXuatPDF.Click += new System.EventHandler(this.btnXuatPDF_Click);
             // 
             // ucKhachHang
             // 
