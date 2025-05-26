@@ -245,5 +245,6 @@
         private MaterialSkin.Controls.MaterialButton btnTimKiem;
         private MaterialSkin.Controls.MaterialTextBox2 txtTimKiem;
         private MaterialSkin.Controls.MaterialButton btnThem;
+        private System.Windows.Forms.Button btnXuatHoaDon;
     }
 }
