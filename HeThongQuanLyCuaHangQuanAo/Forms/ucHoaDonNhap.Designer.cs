@@ -33,6 +33,7 @@
             this.btnTimKiem = new MaterialSkin.Controls.MaterialButton();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnThem = new MaterialSkin.Controls.MaterialButton();
+            this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.clnMaHD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnMaNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -227,6 +228,19 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
+            // 
+            // btnXuatHoaDon
+            // 
+            this.btnXuatHoaDon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnXuatHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXuatHoaDon.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(830, 11);
+            this.btnXuatHoaDon.Name = "btnXuatHoaDon";
+            this.btnXuatHoaDon.Size = new System.Drawing.Size(110, 44);
+            this.btnXuatHoaDon.TabIndex = 11;
+            this.btnXuatHoaDon.Text = "Xuất Hóa Đơn";
+            this.btnXuatHoaDon.UseVisualStyleBackColor = false;
+            this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
 
         }
 
