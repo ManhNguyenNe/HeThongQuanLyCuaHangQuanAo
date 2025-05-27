@@ -72,6 +72,7 @@
             this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTimKiem, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnThem, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnXuatHoaDon, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
