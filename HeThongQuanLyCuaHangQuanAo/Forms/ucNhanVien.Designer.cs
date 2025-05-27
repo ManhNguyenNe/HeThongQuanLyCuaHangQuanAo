@@ -42,7 +42,7 @@
             this.clnSDT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnDiaChi = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnCongViec = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.clnTinhTrang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));\
+            this.clnTinhTrang = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnXuatThongTinNV = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -75,6 +75,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtTimKiem, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSua, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnThem, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnXuatThongTinNV, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
