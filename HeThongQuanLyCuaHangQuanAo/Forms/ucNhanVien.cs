@@ -92,7 +92,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 LoadData();
             }
         }
-                private void btnXuatThongTinNV_Click(object sender, EventArgs e)
+        private void btnXuatThongTinNV_Click(object sender, EventArgs e)
         {
             XuatDanhSachNhanVienRaPDF();
         }
