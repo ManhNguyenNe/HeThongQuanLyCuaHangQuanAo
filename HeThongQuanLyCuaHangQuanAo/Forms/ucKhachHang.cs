@@ -111,6 +111,12 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
         }
 
+                private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+           
+        }
+
+
         private void btnXuatPDF_Click(object sender, EventArgs e)
         {
             List<KhachHang> danhSach = LayDanhSachTuListView();
@@ -118,60 +124,63 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             string folderPath = @"C:\Dulieukhachhang";
             Directory.CreateDirectory(folderPath);
 
+           
+            string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+            BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            iTextSharp.text.Font titleFont = new iTextSharp.text.Font(baseFont, 14, iTextSharp.text.Font.BOLD, BaseColor.BLUE);
+            iTextSharp.text.Font cellFont = new iTextSharp.text.Font(baseFont, 12, iTextSharp.text.Font.NORMAL);
+
             foreach (var kh in danhSach)
             {
                 string filePath = Path.Combine(folderPath, $"{kh.MaKhach}_{kh.TenKhach}.pdf");
                 using (FileStream stream = new FileStream(filePath, FileMode.Create))
                 {
-                    Document pdfDoc = new Document(PageSize.A4, 10, 10, 10, 10);
+                    Document pdfDoc = new Document(PageSize.A4, 20, 20, 20, 20);
                     PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
-                    pdfDoc.Add(new Paragraph($"MaKhach: {kh.MaKhach}"));
-                    pdfDoc.Add(new Paragraph($"TenKhach: {kh.TenKhach}"));
-                    pdfDoc.Add(new Paragraph($"DiaChi: {kh.DiaChi}"));
-                    pdfDoc.Add(new Paragraph($"SDT: {kh.DienThoai}"));
+
+                  
+                    Paragraph title = new Paragraph("THÔNG TIN KHÁCH HÀNG", titleFont);
+                    title.Alignment = Element.ALIGN_CENTER;
+                    title.SpacingAfter = 20;
+                    pdfDoc.Add(title);
+
+                  
+                    PdfPTable table = new PdfPTable(2);
+                    table.WidthPercentage = 100;
+                    table.SpacingBefore = 10;
+                    table.SpacingAfter = 10;
+                    table.SetWidths(new float[] { 30, 70 });
+
+                    AddCell(table, "Mã khách:", cellFont, true);
+                    AddCell(table, kh.MaKhach, cellFont);
+
+                    AddCell(table, "Tên khách:", cellFont, true);
+                    AddCell(table, kh.TenKhach, cellFont);
+
+                    AddCell(table, "Địa chỉ:", cellFont, true);
+                    AddCell(table, kh.DiaChi, cellFont);
+
+                    AddCell(table, "SĐT:", cellFont, true);
+                    AddCell(table, kh.DienThoai, cellFont);
+
+                    pdfDoc.Add(table);
                     pdfDoc.Close();
-                    stream.Close();
                 }
             }
 
-            MessageBox.Show("Đã xuất thông tin khách hàng ra file PDF!");
-
+            MessageBox.Show("Đã xuất thông tin khách hàng ra file PDF!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+      
+        private void AddCell(PdfPTable table, string text, iTextSharp.text.Font font, bool isHeader = false)
         {
-
-        }
-        
-        public static void ExportCustomerToPDF(string tenKhachHang, string diaChi, string soDienThoai, string path)
-        {
-            Document document = new Document();
-            PdfWriter.GetInstance(document, new FileStream(path, FileMode.Create));
-            document.Open();
-
-            document.Add(new Paragraph("Thông tin khách hàng"));
-            document.Add(new Paragraph("Tên: " + tenKhachHang));
-            document.Add(new Paragraph("Địa chỉ: " + diaChi));
-            document.Add(new Paragraph("SĐT: " + soDienThoai));
-
-            document.Close();
-        }
-
-
-        public static void ExportAllCustomersToPDFs(List<KhachHang> danhSachKhachHang, string thuMucXuat)
-        {
-
-            if (!Directory.Exists(thuMucXuat))
-                Directory.CreateDirectory(thuMucXuat);
-
-            foreach (var kh in danhSachKhachHang)
-            {
-                string fileName = $"KhachHang_{kh.MaKhach}.pdf";
-                string filePath = Path.Combine(thuMucXuat, fileName);
-
-                ExportCustomerToPDF(kh.TenKhach, kh.DiaChi, kh.DienThoai, filePath);
-            }
+            PdfPCell cell = new PdfPCell(new Phrase(text, font));
+            cell.Padding = 5;
+            cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            cell.HorizontalAlignment = isHeader ? Element.ALIGN_RIGHT : Element.ALIGN_LEFT;
+            if (isHeader) cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+            table.AddCell(cell);
         }
     }
 }
