@@ -90,7 +90,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 LoadData();
             }
         }
-                private void btnXuatHoaDon_Click(object sender, EventArgs e)
+                        private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
             if (materialListView1.SelectedItems.Count == 0)
             {
@@ -126,27 +126,32 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 PdfWriter.GetInstance(doc, fs);
                 doc.Open();
 
-                var titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
-                var bodyFont = FontFactory.GetFont(FontFactory.HELVETICA, 12);
+                // Load font Unicode hỗ trợ tiếng Việt
+                string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+                BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                iTextSharp.text.Font titleFont = new iTextSharp.text.Font(baseFont, 16, iTextSharp.text.Font.BOLD);
 
-                doc.Add(new Paragraph("HOA DON NHAP HANG", titleFont));
+                iTextSharp.text.Font bodyFont = new iTextSharp.text.Font(baseFont, 12, iTextSharp.text.Font.NORMAL);
+
+
+                doc.Add(new Paragraph("HÓA ĐƠN NHẬP HÀNG", titleFont));
                 doc.Add(new Paragraph(" "));
 
-                doc.Add(new Paragraph($"So HD: {first.SoHDN}", bodyFont));
-                doc.Add(new Paragraph($"Ngay nhap: {first.NgayNhap:dd/MM/yyyy}", bodyFont));
-                doc.Add(new Paragraph($"Nhan vien: {first.TenNV}", bodyFont));
-                doc.Add(new Paragraph($"Nha cung cap: {first.TenNCC}", bodyFont));
+                doc.Add(new Paragraph($"Số HĐ: {first.SoHDN}", bodyFont));
+                doc.Add(new Paragraph($"Ngày nhập: {first.NgayNhap:dd/MM/yyyy}", bodyFont));
+                doc.Add(new Paragraph($"Nhân viên: {first.TenNV}", bodyFont));
+                doc.Add(new Paragraph($"Nhà cung cấp: {first.TenNCC}", bodyFont));
                 doc.Add(new Paragraph(" "));
 
                 PdfPTable table = new PdfPTable(5);
                 table.WidthPercentage = 100;
                 table.SetWidths(new float[] { 20, 35, 15, 15, 15 });
 
-                AddCell(table, "Ma quan ao", true);
-                AddCell(table, "Ten quan ao", true);
-                AddCell(table, "Don gia", true);
-                AddCell(table, "So luong", true);
-                AddCell(table, "Thanh tien", true);
+                AddCell(table, "Mã quần áo", true);
+                AddCell(table, "Tên quần áo", true);
+                AddCell(table, "Đơn giá", true);
+                AddCell(table, "Số lượng", true);
+                AddCell(table, "Thành tiền", true);
 
                 decimal tongTien = 0;
 
@@ -168,9 +173,9 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 decimal giamGia = first.GiamGia;
                 decimal thanhToan = tongTien - giamGia;
 
-                doc.Add(new Paragraph($"Tong tien: {tongTien:N0} VNĐ", bodyFont));
-                doc.Add(new Paragraph($"Giam gia: {giamGia:N0} VNĐ", bodyFont));
-                doc.Add(new Paragraph($"Thanh tien: {thanhToan:N0} VNĐ", bodyFont));
+                doc.Add(new Paragraph($"Tổng tiền: {tongTien:N0} VNĐ", bodyFont));
+                doc.Add(new Paragraph($"Giảm giá: {giamGia:N0} VNĐ", bodyFont));
+                doc.Add(new Paragraph($"Thành tiền: {thanhToan:N0} VNĐ", bodyFont));
 
                 doc.Close();
             }
@@ -179,15 +184,21 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         }
         private void AddCell(PdfPTable table, string text, bool isHeader = false)
         {
-            var font = isHeader ? FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 12) : FontFactory.GetFont(FontFactory.HELVETICA, 11);
-            var cell = new PdfPCell(new Phrase(text, font));
+            string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+            BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+            iTextSharp.text.Font font = new iTextSharp.text.Font(
+    baseFont,
+    isHeader ? 12f : 11f,
+    isHeader ? iTextSharp.text.Font.BOLD : iTextSharp.text.Font.NORMAL
+);
+
+            PdfPCell cell = new PdfPCell(new Phrase(text, font));
             cell.HorizontalAlignment = Element.ALIGN_CENTER;
             cell.VerticalAlignment = Element.ALIGN_MIDDLE;
             cell.Padding = 5;
             if (isHeader) cell.BackgroundColor = BaseColor.LIGHT_GRAY;
             table.AddCell(cell);
         }
-
     }
 }
     
