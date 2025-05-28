@@ -92,7 +92,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 LoadData();
             }
         }
-                private void btnXuatHoaDonBan_Click(object sender, EventArgs e)
+                        private void btnXuatHoaDonBan_Click(object sender, EventArgs e)
         {
             if (materialListView1.SelectedItems.Count > 0)
             {
@@ -104,6 +104,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 MessageBox.Show("Vui lòng chọn hóa đơn để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private void XuatHoaDonBanRaPDF(string soHDB)
         {
             var chiTietDAL = new ChiTietHDBanDAL();
@@ -129,44 +130,63 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             using (PdfWriter writer = PdfWriter.GetInstance(doc, fs))
             {
                 doc.Open();
-                var font = FontFactory.GetFont(BaseFont.TIMES_ROMAN, 12, BaseColor.BLACK);
 
-                doc.Add(new Paragraph("HOA DON BAN", FontFactory.GetFont(BaseFont.TIMES_BOLD, 16, BaseColor.BLUE)));
-                doc.Add(new Paragraph($"So HD: {hd.SoHDB}"));
-                doc.Add(new Paragraph($"Ngay ban: {hd.NgayBan:dd/MM/yyyy}"));
-                doc.Add(new Paragraph($"Nhan vien: {hd.TenNV}"));
-                doc.Add(new Paragraph($"Khach hang: {hd.TenKhach}"));
+                // Load font Unicode để hỗ trợ tiếng Việt
+                string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
+                BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                iTextSharp.text.Font titleFont = new iTextSharp.text.Font(baseFont, 16f, iTextSharp.text.Font.BOLD, BaseColor.BLUE);
+                iTextSharp.text.Font bodyFont = new iTextSharp.text.Font(baseFont, 12f, iTextSharp.text.Font.NORMAL);
+                iTextSharp.text.Font headerFont = new iTextSharp.text.Font(baseFont, 12f, iTextSharp.text.Font.BOLD);
+
+                doc.Add(new Paragraph("HÓA ĐƠN BÁN", titleFont));
+                doc.Add(new Paragraph($"Số HĐ: {hd.SoHDB}", bodyFont));
+                doc.Add(new Paragraph($"Ngày bán: {hd.NgayBan:dd/MM/yyyy}", bodyFont));
+                doc.Add(new Paragraph($"Nhân viên: {hd.TenNV}", bodyFont));
+                doc.Add(new Paragraph($"Khách hàng: {hd.TenKhach}", bodyFont));
                 doc.Add(new Paragraph(" "));
 
                 PdfPTable table = new PdfPTable(5);
                 table.WidthPercentage = 100;
-                table.AddCell("Ten san pham");
-                table.AddCell("Don gia");
-                table.AddCell("So luong");
-                table.AddCell("Giam gia");
-                table.AddCell("Thanh tien");
+                table.SetWidths(new float[] { 30, 20, 15, 15, 20 });
+
+                AddCell(table, "Tên sản phẩm", headerFont);
+                AddCell(table, "Đơn giá", headerFont);
+                AddCell(table, "Số lượng", headerFont);
+                AddCell(table, "Giảm giá", headerFont);
+                AddCell(table, "Thành tiền", headerFont);
 
                 decimal tongTien = 0;
                 foreach (var ct in chiTietList)
                 {
-                    table.AddCell(ct.TenQuanAo);
-                    table.AddCell($"{ct.DonGiaBan:N0} VNĐ");
-                    table.AddCell(ct.SoLuong.ToString());
-                    table.AddCell($"{ct.GiamGia:N0} VNĐ");
                     decimal thanhTien = ct.ThanhTien - ct.GiamGia;
-                    table.AddCell($"{thanhTien:N0} VNĐ");
                     tongTien += thanhTien;
+
+                    AddCell(table, ct.TenQuanAo, bodyFont);
+                    AddCell(table, $"{ct.DonGiaBan:N0} VNĐ", bodyFont);
+                    AddCell(table, ct.SoLuong.ToString(), bodyFont);
+                    AddCell(table, $"{ct.GiamGia:N0} VNĐ", bodyFont);
+                    AddCell(table, $"{thanhTien:N0} VNĐ", bodyFont);
                 }
 
                 doc.Add(table);
                 doc.Add(new Paragraph(" "));
-                doc.Add(new Paragraph($"Tong cong: {tongTien:N0} VND", FontFactory.GetFont(BaseFont.TIMES_BOLD, 12)));
+                doc.Add(new Paragraph($"Tổng cộng: {tongTien:N0} VNĐ", headerFont));
+
                 doc.Close();
             }
 
             MessageBox.Show($"Xuất hóa đơn thành công tại:\n{filePath}", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void AddCell(PdfPTable table, string text, iTextSharp.text.Font font)
+        {
+            PdfPCell cell = new PdfPCell(new Phrase(text, font));
+            cell.HorizontalAlignment = Element.ALIGN_CENTER;
+            cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+            cell.Padding = 5;
+            cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+            table.AddCell(cell);
+        }
     }
 }
     
