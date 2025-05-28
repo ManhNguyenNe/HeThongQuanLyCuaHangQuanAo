@@ -2,8 +2,6 @@ using HeThongQuanLyCuaHangQuanAo.BUS;
 using HeThongQuanLyCuaHangQuanAo.DAL;
 using HeThongQuanLyCuaHangQuanAo.Models;
 using HeThongQuanLyCuaHangQuanAo.ViewModels;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +12,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace HeThongQuanLyCuaHangQuanAo.Forms
 {

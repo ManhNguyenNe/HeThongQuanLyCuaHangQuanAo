@@ -173,6 +173,13 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 tpTaiKhoan.Controls.Add(ucTaiKhoan);
             }
 
+            // Tab Thống kê - Chỉ Admin có quyền
+            if (materialTabControl1.TabPages.Contains(tpThongKe))
+            {
+                var ucThongKe = new ucThongKe();
+                ucThongKe.Dock = DockStyle.Fill;
+                tpThongKe.Controls.Add(ucThongKe);
+            }
             // Thêm xử lý cho tab đăng xuất
             materialTabControl1.Selecting += materialTabControl1_Selecting;
         }

@@ -33,16 +33,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Configuration.ConfigurationManager, Version=9.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Configuration.ConfigurationManager.9.0.4\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    <Reference Include="System.Configuration.ConfigurationManager, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.10.0.0-preview.4.25258.110\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +82,7 @@
     <Compile Include="BUS\SanPhamBUS.cs" />
     <Compile Include="BUS\TaiKhoanBUS.cs" />
     <Compile Include="BUS\TheLoaiBUS.cs" />
+    <Compile Include="BUS\ThongKeBUS.cs" />
     <Compile Include="DAL\ChatLieuDAL.cs" />
     <Compile Include="DAL\ChiTietHDBanDAL.cs" />
     <Compile Include="DAL\ChiTietHDNhapDAL.cs" />
@@ -88,6 +100,7 @@
     <Compile Include="DAL\SanPhamDAL.cs" />
     <Compile Include="DAL\TaiKhoanDAL.cs" />
     <Compile Include="DAL\TheLoaiDAL.cs" />
+    <Compile Include="DAL\ThongKeDAL.cs" />
     <Compile Include="DBHelper.cs" />
     <Compile Include="Forms\CapNhatSanPham.cs">
       <SubType>Form</SubType>
@@ -209,6 +222,48 @@
     <Compile Include="Forms\ucTaiKhoan.Designer.cs">
       <DependentUpon>ucTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucThongKe.Designer.cs">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucThongKeNgay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucThongKeNgay.Designer.cs">
+      <DependentUpon>ucThongKeNgay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucThongKeSPBan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucThongKeSPBan.Designer.cs">
+      <DependentUpon>ucThongKeSPBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucThongKeThang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucThongKeThang.Designer.cs">
+      <DependentUpon>ucThongKeThang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucThongKeTK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucThongKeTK.Designer.cs">
+      <DependentUpon>ucThongKeTK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucThongKeTuan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucThongKeTuan.Designer.cs">
+      <DependentUpon>ucThongKeTuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ucThongKeKHTN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucThongKeKHTN.Designer.cs">
+      <DependentUpon>ucThongKeKHTN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +355,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ucTaiKhoan.resx">
       <DependentUpon>ucTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucThongKe.resx">
+      <DependentUpon>ucThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucThongKeNgay.resx">
+      <DependentUpon>ucThongKeNgay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucThongKeSPBan.resx">
+      <DependentUpon>ucThongKeSPBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucThongKeThang.resx">
+      <DependentUpon>ucThongKeThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucThongKeTK.resx">
+      <DependentUpon>ucThongKeTK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucThongKeTuan.resx">
+      <DependentUpon>ucThongKeTuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucThongKeKHTN.resx">
+      <DependentUpon>ucThongKeKHTN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\XuatHang.resx">
       <DependentUpon>XuatHang.cs</DependentUpon>
