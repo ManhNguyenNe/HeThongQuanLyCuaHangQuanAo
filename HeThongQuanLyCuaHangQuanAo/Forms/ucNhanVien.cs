@@ -115,43 +115,52 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
+                
+                string fontPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "tahoma.ttf");
+
+                BaseFont baseFont = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+
+               
+                var titleFont = new iTextSharp.text.Font(baseFont, 16, iTextSharp.text.Font.BOLD);
+                var headerFont = new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.BOLD);
+                var normalFont = new iTextSharp.text.Font(baseFont, 10, iTextSharp.text.Font.NORMAL);
+
                 Document doc = new Document(PageSize.A4, 25, 25, 30, 30);
                 PdfWriter.GetInstance(doc, new FileStream(saveFileDialog.FileName, FileMode.Create));
                 doc.Open();
 
-        
-                var titleFont = FontFactory.GetFont("Arial", "16", Font.Bold);
-                Paragraph title = new Paragraph("DANH SACH NHAN VIEN", titleFont);
+              
+                Paragraph title = new Paragraph("DANH SÁCH NHÂN VIÊN", titleFont);
                 title.Alignment = Element.ALIGN_CENTER;
                 title.SpacingAfter = 20;
                 doc.Add(title);
 
-            
+                
                 PdfPTable table = new PdfPTable(8);
                 table.WidthPercentage = 100;
                 table.SetWidths(new float[] { 8, 15, 10, 12, 12, 20, 15, 10 });
 
-               
-                string[] headers = { "Ma NV", "Ten NV", "Gioi Tinh", "Ngay Sinh", "Dien Thoai", "Dia Chi", "Cong Viec", "Tinh Trang" };
+                
+                string[] headers = { "Mã NV", "Tên NV", "Giới tính", "Ngày Sinh", "Điện Thoại", "Địa Chỉ", "Công Việc", "Tình Trạng" };
                 foreach (string header in headers)
                 {
-                    PdfPCell cell = new PdfPCell(new Phrase(header, FontFactory.GetFont("Arial", "10", Font.Bold)));
+                    PdfPCell cell = new PdfPCell(new Phrase(header, headerFont));
                     cell.HorizontalAlignment = Element.ALIGN_CENTER;
                     cell.BackgroundColor = new BaseColor(230, 230, 250);
                     table.AddCell(cell);
                 }
 
-               
+                
                 foreach (var nv in danhSachNV)
                 {
-                    table.AddCell(nv.MaNV);
-                    table.AddCell(nv.TenNV);
-                    table.AddCell(nv.GioiTinh);
-                    table.AddCell(nv.NgaySinh.ToString("dd/MM/yyyy"));
-                    table.AddCell(nv.DienThoai);
-                    table.AddCell(nv.DiaChi);
-                    table.AddCell(nv.TenCV);
-                    table.AddCell(nv.TinhTrang);
+                    table.AddCell(new PdfPCell(new Phrase(nv.MaNV, normalFont)));
+                    table.AddCell(new PdfPCell(new Phrase(nv.TenNV, normalFont)));
+                    table.AddCell(new PdfPCell(new Phrase(nv.GioiTinh, normalFont)));
+                    table.AddCell(new PdfPCell(new Phrase(nv.NgaySinh.ToString("dd/MM/yyyy"), normalFont)));
+                    table.AddCell(new PdfPCell(new Phrase(nv.DienThoai, normalFont)));
+                    table.AddCell(new PdfPCell(new Phrase(nv.DiaChi, normalFont)));
+                    table.AddCell(new PdfPCell(new Phrase(nv.TenCV, normalFont)));
+                    table.AddCell(new PdfPCell(new Phrase(nv.TinhTrang, normalFont)));
                 }
 
                 doc.Add(table);
@@ -160,11 +169,8 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 MessageBox.Show("Xuất danh sách nhân viên ra PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
     }
 }
-
         
     
 
