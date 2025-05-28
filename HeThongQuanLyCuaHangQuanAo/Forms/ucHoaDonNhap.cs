@@ -90,7 +90,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 LoadData();
             }
         }
-                        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
             if (materialListView1.SelectedItems.Count == 0)
             {
