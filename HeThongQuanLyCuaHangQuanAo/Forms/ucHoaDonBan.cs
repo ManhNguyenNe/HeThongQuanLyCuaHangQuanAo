@@ -92,7 +92,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 LoadData();
             }
         }
-                        private void btnXuatHoaDonBan_Click(object sender, EventArgs e)
+        private void btnXuatHoaDonBan_Click(object sender, EventArgs e)
         {
             if (materialListView1.SelectedItems.Count > 0)
             {
