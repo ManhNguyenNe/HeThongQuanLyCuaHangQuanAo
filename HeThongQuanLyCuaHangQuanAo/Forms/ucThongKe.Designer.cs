@@ -46,29 +46,32 @@
             this.materialComboBox1.FormattingEnabled = true;
             this.materialComboBox1.IntegralHeight = false;
             this.materialComboBox1.ItemHeight = 43;
-            this.materialComboBox1.Location = new System.Drawing.Point(20, 3);
+            this.materialComboBox1.Location = new System.Drawing.Point(15, 2);
+            this.materialComboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.materialComboBox1.MaxDropDownItems = 4;
             this.materialComboBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBox1.Name = "materialComboBox1";
-            this.materialComboBox1.Size = new System.Drawing.Size(1439, 49);
+            this.materialComboBox1.Size = new System.Drawing.Size(1080, 49);
             this.materialComboBox1.StartIndex = 0;
             this.materialComboBox1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(20, 58);
+            this.panel1.Location = new System.Drawing.Point(15, 47);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1439, 716);
+            this.panel1.Size = new System.Drawing.Size(1079, 582);
             this.panel1.TabIndex = 1;
             // 
             // ucThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.materialComboBox1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ucThongKe";
-            this.Size = new System.Drawing.Size(1513, 795);
+            this.Size = new System.Drawing.Size(1188, 727);
             this.Load += new System.EventHandler(this.ucThongKe_Load);
             this.ResumeLayout(false);
 

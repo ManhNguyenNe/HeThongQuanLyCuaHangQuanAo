@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
-            this.tpTrangChu = new System.Windows.Forms.TabPage();
             this.tpSanPham = new System.Windows.Forms.TabPage();
             this.tpKhachHang = new System.Windows.Forms.TabPage();
             this.tpNhaCungCap = new System.Windows.Forms.TabPage();
@@ -39,15 +38,15 @@
             this.tpNhapHang = new System.Windows.Forms.TabPage();
             this.tpXuatHang = new System.Windows.Forms.TabPage();
             this.tpTaiKhoan = new System.Windows.Forms.TabPage();
+            this.tpThongKe = new System.Windows.Forms.TabPage();
+            this.tpDoiMatKhau = new System.Windows.Forms.TabPage();
             this.tpDangXuat = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.tpThongKe = new System.Windows.Forms.TabPage();
             this.materialTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Controls.Add(this.tpTrangChu);
             this.materialTabControl1.Controls.Add(this.tpSanPham);
             this.materialTabControl1.Controls.Add(this.tpKhachHang);
             this.materialTabControl1.Controls.Add(this.tpNhaCungCap);
@@ -55,40 +54,28 @@
             this.materialTabControl1.Controls.Add(this.tpNhapHang);
             this.materialTabControl1.Controls.Add(this.tpXuatHang);
             this.materialTabControl1.Controls.Add(this.tpTaiKhoan);
-            this.materialTabControl1.Controls.Add(this.tpDangXuat);
             this.materialTabControl1.Controls.Add(this.tpThongKe);
+            this.materialTabControl1.Controls.Add(this.tpDoiMatKhau);
+            this.materialTabControl1.Controls.Add(this.tpDangXuat);
             this.materialTabControl1.Depth = 0;
             this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.materialTabControl1.ImageList = this.imageList1;
-            this.materialTabControl1.Location = new System.Drawing.Point(4, 79);
-            this.materialTabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
             this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabControl1.Multiline = true;
             this.materialTabControl1.Name = "materialTabControl1";
             this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1592, 902);
+            this.materialTabControl1.Size = new System.Drawing.Size(1194, 673);
             this.materialTabControl1.TabIndex = 0;
-            // 
-            // tpTrangChu
-            // 
-            this.tpTrangChu.ImageKey = "icons8-analytics-32.png";
-            this.tpTrangChu.Location = new System.Drawing.Point(4, 39);
-            this.tpTrangChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpTrangChu.Name = "tpTrangChu";
-            this.tpTrangChu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpTrangChu.Size = new System.Drawing.Size(1584, 859);
-            this.tpTrangChu.TabIndex = 0;
-            this.tpTrangChu.Text = "Trang chủ";
-            this.tpTrangChu.UseVisualStyleBackColor = true;
+            this.materialTabControl1.SelectedIndexChanged += new System.EventHandler(this.MaterialTabControl1_SelectedIndexChanged);
             // 
             // tpSanPham
             // 
             this.tpSanPham.ImageKey = "icons8-product-32.png";
             this.tpSanPham.Location = new System.Drawing.Point(4, 39);
-            this.tpSanPham.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpSanPham.Name = "tpSanPham";
-            this.tpSanPham.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpSanPham.Size = new System.Drawing.Size(1584, 859);
+            this.tpSanPham.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpSanPham.Size = new System.Drawing.Size(1186, 630);
             this.tpSanPham.TabIndex = 1;
             this.tpSanPham.Text = "Sản phẩm";
             this.tpSanPham.UseVisualStyleBackColor = true;
@@ -97,10 +84,9 @@
             // 
             this.tpKhachHang.ImageKey = "icons8-customer-32.png";
             this.tpKhachHang.Location = new System.Drawing.Point(4, 39);
-            this.tpKhachHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpKhachHang.Name = "tpKhachHang";
-            this.tpKhachHang.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpKhachHang.Size = new System.Drawing.Size(1584, 859);
+            this.tpKhachHang.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpKhachHang.Size = new System.Drawing.Size(1186, 630);
             this.tpKhachHang.TabIndex = 2;
             this.tpKhachHang.Text = "Khách hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
@@ -109,10 +95,9 @@
             // 
             this.tpNhaCungCap.ImageKey = "icons8-supplier-32.png";
             this.tpNhaCungCap.Location = new System.Drawing.Point(4, 39);
-            this.tpNhaCungCap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpNhaCungCap.Name = "tpNhaCungCap";
-            this.tpNhaCungCap.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpNhaCungCap.Size = new System.Drawing.Size(1584, 859);
+            this.tpNhaCungCap.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpNhaCungCap.Size = new System.Drawing.Size(1186, 630);
             this.tpNhaCungCap.TabIndex = 3;
             this.tpNhaCungCap.Text = "Nhà cung cấp";
             this.tpNhaCungCap.UseVisualStyleBackColor = true;
@@ -121,10 +106,9 @@
             // 
             this.tpNhanVien.ImageKey = "icons8-user-32.png";
             this.tpNhanVien.Location = new System.Drawing.Point(4, 39);
-            this.tpNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpNhanVien.Name = "tpNhanVien";
-            this.tpNhanVien.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpNhanVien.Size = new System.Drawing.Size(1584, 859);
+            this.tpNhanVien.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpNhanVien.Size = new System.Drawing.Size(1186, 630);
             this.tpNhanVien.TabIndex = 4;
             this.tpNhanVien.Text = "Nhân viên";
             this.tpNhanVien.UseVisualStyleBackColor = true;
@@ -133,10 +117,9 @@
             // 
             this.tpNhapHang.ImageKey = "icons8-input-32.png";
             this.tpNhapHang.Location = new System.Drawing.Point(4, 39);
-            this.tpNhapHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpNhapHang.Name = "tpNhapHang";
-            this.tpNhapHang.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpNhapHang.Size = new System.Drawing.Size(1584, 859);
+            this.tpNhapHang.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpNhapHang.Size = new System.Drawing.Size(1186, 630);
             this.tpNhapHang.TabIndex = 5;
             this.tpNhapHang.Text = "Nhập hàng";
             this.tpNhapHang.UseVisualStyleBackColor = true;
@@ -145,10 +128,9 @@
             // 
             this.tpXuatHang.ImageKey = "icons8-checkout-32.png";
             this.tpXuatHang.Location = new System.Drawing.Point(4, 39);
-            this.tpXuatHang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpXuatHang.Name = "tpXuatHang";
-            this.tpXuatHang.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpXuatHang.Size = new System.Drawing.Size(1584, 859);
+            this.tpXuatHang.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpXuatHang.Size = new System.Drawing.Size(1186, 630);
             this.tpXuatHang.TabIndex = 6;
             this.tpXuatHang.Text = "Xuất hàng";
             this.tpXuatHang.UseVisualStyleBackColor = true;
@@ -157,22 +139,42 @@
             // 
             this.tpTaiKhoan.ImageKey = "icons8-account-32.png";
             this.tpTaiKhoan.Location = new System.Drawing.Point(4, 39);
-            this.tpTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpTaiKhoan.Name = "tpTaiKhoan";
-            this.tpTaiKhoan.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpTaiKhoan.Size = new System.Drawing.Size(1584, 859);
+            this.tpTaiKhoan.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpTaiKhoan.Size = new System.Drawing.Size(1186, 630);
             this.tpTaiKhoan.TabIndex = 7;
             this.tpTaiKhoan.Text = "Tài khoản";
             this.tpTaiKhoan.UseVisualStyleBackColor = true;
+            // 
+            // tpThongKe
+            // 
+            this.tpThongKe.ImageKey = "icons8-warehouse-32.png";
+            this.tpThongKe.Location = new System.Drawing.Point(4, 39);
+            this.tpThongKe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpThongKe.Name = "tpThongKe";
+            this.tpThongKe.Size = new System.Drawing.Size(1186, 630);
+            this.tpThongKe.TabIndex = 9;
+            this.tpThongKe.Text = "Thống kê";
+            this.tpThongKe.UseVisualStyleBackColor = true;
+            // 
+            // tpDoiMatKhau
+            // 
+            this.tpDoiMatKhau.ImageKey = "icons8-privacy-32.png";
+            this.tpDoiMatKhau.Location = new System.Drawing.Point(4, 39);
+            this.tpDoiMatKhau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpDoiMatKhau.Name = "tpDoiMatKhau";
+            this.tpDoiMatKhau.Size = new System.Drawing.Size(1186, 630);
+            this.tpDoiMatKhau.TabIndex = 10;
+            this.tpDoiMatKhau.Text = "Đổi Mật Khẩu";
+            this.tpDoiMatKhau.UseVisualStyleBackColor = true;
             // 
             // tpDangXuat
             // 
             this.tpDangXuat.ImageKey = "icons8-logout-32.png";
             this.tpDangXuat.Location = new System.Drawing.Point(4, 39);
-            this.tpDangXuat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpDangXuat.Name = "tpDangXuat";
-            this.tpDangXuat.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpDangXuat.Size = new System.Drawing.Size(1584, 859);
+            this.tpDangXuat.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpDangXuat.Size = new System.Drawing.Size(1186, 630);
             this.tpDangXuat.TabIndex = 8;
             this.tpDangXuat.Text = "Đăng xuất";
             this.tpDangXuat.UseVisualStyleBackColor = true;
@@ -191,29 +193,18 @@
             this.imageList1.Images.SetKeyName(7, "icons8-input-32.png");
             this.imageList1.Images.SetKeyName(8, "icons8-logout-32.png");
             this.imageList1.Images.SetKeyName(9, "icons8-warehouse-32.png");
-            // 
-            // tpThongKe
-            // 
-            this.tpThongKe.ImageKey = "icons8-warehouse-32.png";
-            this.tpThongKe.Location = new System.Drawing.Point(4, 39);
-            this.tpThongKe.Name = "tpThongKe";
-            this.tpThongKe.Size = new System.Drawing.Size(1584, 859);
-            this.tpThongKe.TabIndex = 9;
-            this.tpThongKe.Text = "Thống kê";
-            this.tpThongKe.UseVisualStyleBackColor = true;
+            this.imageList1.Images.SetKeyName(10, "icons8-privacy-32.png");
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 985);
+            this.ClientSize = new System.Drawing.Size(1200, 740);
             this.Controls.Add(this.materialTabControl1);
             this.DrawerShowIconsWhenHidden = true;
             this.DrawerTabControl = this.materialTabControl1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
-            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
-            this.Text = "Main";
+            this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.Main_Load);
             this.materialTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -223,7 +214,6 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
-        private System.Windows.Forms.TabPage tpTrangChu;
         private System.Windows.Forms.TabPage tpSanPham;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabPage tpKhachHang;
@@ -234,5 +224,6 @@
         private System.Windows.Forms.TabPage tpTaiKhoan;
         private System.Windows.Forms.TabPage tpDangXuat;
         private System.Windows.Forms.TabPage tpThongKe;
+        private System.Windows.Forms.TabPage tpDoiMatKhau;
     }
 }

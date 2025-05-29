@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongQuanLyCuaHangQuanAo.BUS;
+using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace HeThongQuanLyCuaHangQuanAo.Forms
@@ -19,7 +20,10 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         public Login()
         {
             InitializeComponent();
-            this.AcceptButton = btnDangNhap; // Cho phép nhấn Enter để đăng nhập
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -72,7 +76,14 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTenDangNhap.Clear();
+                txtMatKhau.Clear();
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Dispose();
         }
     }
 }

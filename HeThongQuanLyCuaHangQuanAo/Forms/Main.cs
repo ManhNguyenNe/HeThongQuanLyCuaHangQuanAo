@@ -26,180 +26,85 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
         private void Main_Load(object sender, EventArgs e)
         {
-            // Hiển thị tên người dùng đăng nhập
-            this.Text = $"Hệ thống quản lý cửa hàng quần áo - {UserSession.TenNV}";
+            //var ucTrangChu = new ucTrangChu();
+            //ucTrangChu.Dock = DockStyle.Fill;
+            //tpTrangChu.Controls.Add(ucTrangChu);
 
-            // Phân quyền truy cập
-            ApplyPermissions();
+            var ucSanPham = new ucSanPham();
+            ucSanPham.Dock = DockStyle.Fill;
+            tpSanPham.Controls.Add(ucSanPham);
 
-            // Load các user control
-            LoadUserControls();
-        }
+            var ucKhachHang = new ucKhachHang();
+            ucKhachHang.Dock = DockStyle.Fill;
+            tpKhachHang.Controls.Add(ucKhachHang);
 
-        private void ApplyPermissions()
-        {
-            // Lưu danh sách các tab cần giữ lại
-            List<TabPage> tabsToKeep = new List<TabPage>();
+            var ucNCC = new ucNCC();
+            ucNCC.Dock = DockStyle.Fill;
+            tpNhaCungCap.Controls.Add(ucNCC);
 
-            // Tab trang chủ luôn được hiển thị cho tất cả người dùng
-            tabsToKeep.Add(tpTrangChu);
+            var ucNV = new ucNhanVien();
+            ucNV.Dock = DockStyle.Fill;
+            tpNhanVien.Controls.Add(ucNV);
 
-            // Phân quyền theo vai trò
+            var ucHoaDonNhap = new ucHoaDonNhap();
+            ucHoaDonNhap.Dock = DockStyle.Fill;
+            tpNhapHang.Controls.Add(ucHoaDonNhap);
+
+
+            var ucHoaDonBan = new ucHoaDonBan();
+            ucHoaDonBan.Dock = DockStyle.Fill;
+            tpXuatHang.Controls.Add(ucHoaDonBan);
+
+            var ucTaiKhoan = new ucTaiKhoan();
+            ucTaiKhoan.Dock = DockStyle.Fill;
+            tpTaiKhoan.Controls.Add(ucTaiKhoan);
+
+            var ucThongKe = new ucThongKe();
+            ucThongKe.Dock = DockStyle.Fill;
+            tpThongKe.Controls.Add(ucThongKe);
+
             switch (UserSession.VaiTro)
             {
-                case 0: // Admin - có quyền truy cập tất cả
-                        // Thêm tất cả các tab vào danh sách giữ lại
-                    foreach (TabPage tab in materialTabControl1.TabPages)
-                    {
-                        if (!tabsToKeep.Contains(tab))
-                        {
-                            tabsToKeep.Add(tab);
-                        }
-                    }
+                case 0: // Admin
                     break;
-                case 1: // Nhân viên bán hàng - chỉ truy cập tab sản phẩm, khách hàng và xuất hàng
-                    tabsToKeep.Add(tpSanPham);
-                    tabsToKeep.Add(tpXuatHang);
-                    tabsToKeep.Add(tpKhachHang);
-                    break;
-                case 2: // Nhân viên kho - chỉ truy cập tab sản phẩm, nhà cung cấp và nhập hàng
-                    tabsToKeep.Add(tpSanPham);
-                    tabsToKeep.Add(tpNhapHang);
-                    tabsToKeep.Add(tpNhaCungCap);
-                    break;
-                default:
-                    break;
-            }
-
-            // Tab đăng xuất luôn được hiển thị
-            tabsToKeep.Add(tpDangXuat);
-
-            // Lưu tất cả các tab vào một danh sách tạm
-            List<TabPage> allTabs = new List<TabPage>();
-            foreach (TabPage tab in materialTabControl1.TabPages)
-            {
-                allTabs.Add(tab);
-            }
-
-            // Xóa các tab không có trong danh sách giữ lại
-            foreach (TabPage tab in allTabs)
-            {
-                if (!tabsToKeep.Contains(tab))
-                {
-                    materialTabControl1.TabPages.Remove(tab);
-                }
-            }
-        }
-
-        public bool CheckPermission(string featureName)
-        {
-            switch (UserSession.VaiTro)
-            {
-                case 0: // Admin có tất cả quyền
-                    return true;
                 case 1: // Nhân viên bán hàng
-                    if (featureName == "SanPham" || featureName == "XuatHang" || featureName == "KhachHang")
-                        return true;
+                    materialTabControl1.TabPages.Remove(tpNhaCungCap);
+                    materialTabControl1.TabPages.Remove(tpNhapHang);
+                    materialTabControl1.TabPages.Remove(tpNhanVien);
+                    materialTabControl1.TabPages.Remove(tpTaiKhoan);
+                    materialTabControl1.TabPages.Remove(tpThongKe);
                     break;
                 case 2: // Nhân viên kho
-                    if (featureName == "SanPham" || featureName == "NhapHang" || featureName == "NhaCungCap")
-                        return true;
+                    materialTabControl1.TabPages.Remove(tpKhachHang);
+                    materialTabControl1.TabPages.Remove(tpXuatHang);
+                    materialTabControl1.TabPages.Remove(tpNhanVien);
+                    materialTabControl1.TabPages.Remove(tpTaiKhoan);
+                    materialTabControl1.TabPages.Remove(tpThongKe);
                     break;
             }
 
-            // Hiển thị thông báo không đủ quyền
-            MessageBox.Show("Bạn không có quyền truy cập chức năng này!",
-                "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return false;
+            materialTabControl1.SelectedIndexChanged += MaterialTabControl1_SelectedIndexChanged;
         }
 
-        private void LoadUserControls()
+        private void MaterialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Chỉ tải các user control cho các tab mà người dùng có quyền truy cập
-
-            // Tab Sản phẩm - Admin, Nhân viên bán hàng, Nhân viên kho đều có quyền
-            if (materialTabControl1.TabPages.Contains(tpSanPham))
+            if(materialTabControl1.SelectedTab == tpDoiMatKhau)
             {
-                var ucSanPham = new ucSanPham();
-                ucSanPham.Dock = DockStyle.Fill;
-                tpSanPham.Controls.Add(ucSanPham);
+                var formDoiMatKhau = new formDoiMatKhau(UserSession.MaTK);
+                formDoiMatKhau.ShowDialog();
+                materialTabControl1.SelectedTab = tpSanPham;
             }
-
-            // Tab Khách hàng - Admin và Nhân viên bán hàng có quyền
-            if (materialTabControl1.TabPages.Contains(tpKhachHang))
-            {
-                var ucKhachHang = new ucKhachHang();
-                ucKhachHang.Dock = DockStyle.Fill;
-                tpKhachHang.Controls.Add(ucKhachHang);
-            }
-
-            // Tab Nhà cung cấp - Admin và Nhân viên kho có quyền
-            if (materialTabControl1.TabPages.Contains(tpNhaCungCap))
-            {
-                var ucNCC = new ucNCC();
-                ucNCC.Dock = DockStyle.Fill;
-                tpNhaCungCap.Controls.Add(ucNCC);
-            }
-
-            // Tab Nhân viên - Chỉ Admin có quyền
-            if (materialTabControl1.TabPages.Contains(tpNhanVien))
-            {
-                var ucNV = new ucNhanVien();
-                ucNV.Dock = DockStyle.Fill;
-                tpNhanVien.Controls.Add(ucNV);
-            }
-
-            // Tab Nhập hàng - Admin và Nhân viên kho có quyền
-            if (materialTabControl1.TabPages.Contains(tpNhapHang))
-            {
-                var ucHoaDonNhap = new ucHoaDonNhap();
-                ucHoaDonNhap.Dock = DockStyle.Fill;
-                tpNhapHang.Controls.Add(ucHoaDonNhap);
-            }
-
-            // Tab Xuất hàng - Admin và Nhân viên bán hàng có quyền
-            if (materialTabControl1.TabPages.Contains(tpXuatHang))
-            {
-                var ucHoaDonBan = new ucHoaDonBan();
-                ucHoaDonBan.Dock = DockStyle.Fill;
-                tpXuatHang.Controls.Add(ucHoaDonBan);
-            }
-
-            // Tab Tài khoản - Chỉ Admin có quyền
-            if (materialTabControl1.TabPages.Contains(tpTaiKhoan))
-            {
-                var ucTaiKhoan = new ucTaiKhoan();
-                ucTaiKhoan.Dock = DockStyle.Fill;
-                tpTaiKhoan.Controls.Add(ucTaiKhoan);
-            }
-
-            // Tab Thống kê - Chỉ Admin có quyền
-            if (materialTabControl1.TabPages.Contains(tpThongKe))
-            {
-                var ucThongKe = new ucThongKe();
-                ucThongKe.Dock = DockStyle.Fill;
-                tpThongKe.Controls.Add(ucThongKe);
-            }
-            // Thêm xử lý cho tab đăng xuất
-            materialTabControl1.Selecting += materialTabControl1_Selecting;
-        }
-
-        private void materialTabControl1_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            if (e.TabPage == tpDangXuat)
+            else if(materialTabControl1.SelectedTab == tpDangXuat)
             {
                 // Hủy việc chọn tab đăng xuất
-                e.Cancel = true;
-
+                materialTabControl1.SelectedTab = tpSanPham;
                 // Xử lý đăng xuất
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?",
                     "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (result == DialogResult.Yes)
                 {
                     // Xóa thông tin phiên đăng nhập
                     UserSession.ClearSession();
-
                     // Đóng form hiện tại và mở form đăng nhập
                     this.Hide();
                     var loginForm = new Login();
@@ -207,6 +112,39 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                     loginForm.Show();
                 }
             }
+
+            switch (materialTabControl1.SelectedTab.Name)
+            {
+                case "tpTrangChu":
+                    this.Text = "Trang chủ";
+                    break;
+                case "tpSanPham":
+                    this.Text = "Quản lý sản phẩm";
+                    break;
+                case "tpKhachHang":
+                    this.Text = "Quản lý khách hàng";
+                    break;
+                case "tpNhaCungCap":
+                    this.Text = "Quản lý nhà cung cấp";
+                    break;
+                case "tpNhanVien":
+                    this.Text = "Quản lý nhân viên";
+                    break;
+                case "tpNhapHang":
+                    this.Text = "Quản lý nhập hàng";
+                    break;
+                case "tpXuatHang":
+                    this.Text = "Quản lý xuất hàng";
+                    break;
+                case "tpTaiKhoan":
+                    this.Text = "Quản lý tài khoản";
+                    break;
+                case "tpThongKe":
+                    this.Text = "Thống kê";
+                    break;
+            }
         }
+
+      
     }
 }

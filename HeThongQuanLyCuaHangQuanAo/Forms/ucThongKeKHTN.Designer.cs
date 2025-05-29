@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
@@ -51,7 +51,8 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(37, 43);
+            this.materialLabel2.Location = new System.Drawing.Point(28, 35);
+            this.materialLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(105, 19);
@@ -61,9 +62,10 @@
             // dtpNgayBatDau
             // 
             this.dtpNgayBatDau.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayBatDau.Location = new System.Drawing.Point(211, 43);
+            this.dtpNgayBatDau.Location = new System.Drawing.Point(158, 35);
+            this.dtpNgayBatDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
-            this.dtpNgayBatDau.Size = new System.Drawing.Size(264, 22);
+            this.dtpNgayBatDau.Size = new System.Drawing.Size(199, 20);
             this.dtpNgayBatDau.TabIndex = 6;
             // 
             // materialLabel3
@@ -71,7 +73,8 @@
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(539, 44);
+            this.materialLabel3.Location = new System.Drawing.Point(404, 36);
+            this.materialLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(106, 19);
@@ -81,9 +84,10 @@
             // dtpNgayKetThuc
             // 
             this.dtpNgayKetThuc.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayKetThuc.Location = new System.Drawing.Point(702, 42);
+            this.dtpNgayKetThuc.Location = new System.Drawing.Point(526, 34);
+            this.dtpNgayKetThuc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
-            this.dtpNgayKetThuc.Size = new System.Drawing.Size(263, 22);
+            this.dtpNgayKetThuc.Size = new System.Drawing.Size(198, 20);
             this.dtpNgayKetThuc.TabIndex = 8;
             // 
             // materialCard1
@@ -92,12 +96,12 @@
             this.materialCard1.Controls.Add(this.mlblTaoBaoCao);
             this.materialCard1.Depth = 0;
             this.materialCard1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard1.Location = new System.Drawing.Point(1013, 41);
-            this.materialCard1.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard1.Location = new System.Drawing.Point(760, 33);
+            this.materialCard1.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.materialCard1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard1.Size = new System.Drawing.Size(183, 30);
+            this.materialCard1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.materialCard1.Size = new System.Drawing.Size(137, 24);
             this.materialCard1.TabIndex = 9;
             // 
             // mlblTaoBaoCao
@@ -105,7 +109,8 @@
             this.mlblTaoBaoCao.AutoSize = true;
             this.mlblTaoBaoCao.Depth = 0;
             this.mlblTaoBaoCao.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mlblTaoBaoCao.Location = new System.Drawing.Point(17, 5);
+            this.mlblTaoBaoCao.Location = new System.Drawing.Point(13, 4);
+            this.mlblTaoBaoCao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mlblTaoBaoCao.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlblTaoBaoCao.Name = "mlblTaoBaoCao";
             this.mlblTaoBaoCao.Size = new System.Drawing.Size(102, 19);
@@ -119,12 +124,12 @@
             this.materialCard2.Controls.Add(this.mlblXuatBaoCao);
             this.materialCard2.Depth = 0;
             this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(1218, 40);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(14);
+            this.materialCard2.Location = new System.Drawing.Point(914, 32);
+            this.materialCard2.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(186, 30);
+            this.materialCard2.Padding = new System.Windows.Forms.Padding(10, 11, 10, 11);
+            this.materialCard2.Size = new System.Drawing.Size(140, 24);
             this.materialCard2.TabIndex = 3;
             // 
             // mlblXuatBaoCao
@@ -132,7 +137,8 @@
             this.mlblXuatBaoCao.AutoSize = true;
             this.mlblXuatBaoCao.Depth = 0;
             this.mlblXuatBaoCao.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.mlblXuatBaoCao.Location = new System.Drawing.Point(17, 5);
+            this.mlblXuatBaoCao.Location = new System.Drawing.Point(13, 4);
+            this.mlblXuatBaoCao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.mlblXuatBaoCao.MouseState = MaterialSkin.MouseState.HOVER;
             this.mlblXuatBaoCao.Name = "mlblXuatBaoCao";
             this.mlblXuatBaoCao.Size = new System.Drawing.Size(111, 19);
@@ -144,32 +150,34 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(507, 148);
+            this.label2.Location = new System.Drawing.Point(380, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(458, 25);
+            this.label2.Size = new System.Drawing.Size(383, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Biểu đồ thể hiện top 10 khách hàng tiềm năng ";
             // 
             // chart1
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
-            this.chart1.Location = new System.Drawing.Point(18, 186);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
+            this.chart1.Location = new System.Drawing.Point(14, 151);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Doanh thu";
-            this.chart1.Series.Add(series4);
-            this.chart1.Size = new System.Drawing.Size(1396, 479);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Doanh thu";
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(1047, 389);
             this.chart1.TabIndex = 11;
             this.chart1.Text = "chart1";
             // 
             // ucThongKeKHTN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.label2);
@@ -179,8 +187,9 @@
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.dtpNgayBatDau);
             this.Controls.Add(this.materialLabel2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ucThongKeKHTN";
-            this.Size = new System.Drawing.Size(1516, 755);
+            this.Size = new System.Drawing.Size(1137, 613);
             this.Load += new System.EventHandler(this.ucThongKeKHTN_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();

@@ -89,12 +89,11 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel10, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 79);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 64);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1125, 655);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(844, 533);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -123,8 +122,7 @@
             this.tableLayoutPanel2.Controls.Add(this.txtDonGiaNhap, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.txtDonGiaBan, 1, 9);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(454, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(340, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 10;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -137,7 +135,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(667, 647);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(501, 527);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // lblTenQA
@@ -146,8 +144,7 @@
             this.lblTenQA.AutoSize = true;
             this.lblTenQA.Depth = 0;
             this.lblTenQA.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblTenQA.Location = new System.Drawing.Point(4, 22);
-            this.lblTenQA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTenQA.Location = new System.Drawing.Point(3, 16);
             this.lblTenQA.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTenQA.Name = "lblTenQA";
             this.lblTenQA.Size = new System.Drawing.Size(107, 19);
@@ -160,8 +157,7 @@
             this.lblLoai.AutoSize = true;
             this.lblLoai.Depth = 0;
             this.lblLoai.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblLoai.Location = new System.Drawing.Point(4, 86);
-            this.lblLoai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLoai.Location = new System.Drawing.Point(3, 68);
             this.lblLoai.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblLoai.Name = "lblLoai";
             this.lblLoai.Size = new System.Drawing.Size(36, 19);
@@ -174,8 +170,7 @@
             this.lblCo.AutoSize = true;
             this.lblCo.Depth = 0;
             this.lblCo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblCo.Location = new System.Drawing.Point(4, 150);
-            this.lblCo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCo.Location = new System.Drawing.Point(3, 120);
             this.lblCo.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblCo.Name = "lblCo";
             this.lblCo.Size = new System.Drawing.Size(24, 19);
@@ -188,8 +183,7 @@
             this.lblChatLieu.AutoSize = true;
             this.lblChatLieu.Depth = 0;
             this.lblChatLieu.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblChatLieu.Location = new System.Drawing.Point(4, 214);
-            this.lblChatLieu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblChatLieu.Location = new System.Drawing.Point(3, 172);
             this.lblChatLieu.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblChatLieu.Name = "lblChatLieu";
             this.lblChatLieu.Size = new System.Drawing.Size(67, 19);
@@ -202,8 +196,7 @@
             this.lblMauSac.AutoSize = true;
             this.lblMauSac.Depth = 0;
             this.lblMauSac.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblMauSac.Location = new System.Drawing.Point(4, 278);
-            this.lblMauSac.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMauSac.Location = new System.Drawing.Point(3, 224);
             this.lblMauSac.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMauSac.Name = "lblMauSac";
             this.lblMauSac.Size = new System.Drawing.Size(66, 19);
@@ -216,8 +209,7 @@
             this.lblDoiTuong.AutoSize = true;
             this.lblDoiTuong.Depth = 0;
             this.lblDoiTuong.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblDoiTuong.Location = new System.Drawing.Point(4, 342);
-            this.lblDoiTuong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDoiTuong.Location = new System.Drawing.Point(3, 276);
             this.lblDoiTuong.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDoiTuong.Name = "lblDoiTuong";
             this.lblDoiTuong.Size = new System.Drawing.Size(75, 19);
@@ -230,8 +222,7 @@
             this.lblMua.AutoSize = true;
             this.lblMua.Depth = 0;
             this.lblMua.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblMua.Location = new System.Drawing.Point(4, 406);
-            this.lblMua.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMua.Location = new System.Drawing.Point(3, 328);
             this.lblMua.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMua.Name = "lblMua";
             this.lblMua.Size = new System.Drawing.Size(37, 19);
@@ -244,8 +235,7 @@
             this.lblNSX.AutoSize = true;
             this.lblNSX.Depth = 0;
             this.lblNSX.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblNSX.Location = new System.Drawing.Point(4, 470);
-            this.lblNSX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNSX.Location = new System.Drawing.Point(3, 380);
             this.lblNSX.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblNSX.Name = "lblNSX";
             this.lblNSX.Size = new System.Drawing.Size(94, 19);
@@ -258,8 +248,7 @@
             this.lblDonGiaNhap.AutoSize = true;
             this.lblDonGiaNhap.Depth = 0;
             this.lblDonGiaNhap.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblDonGiaNhap.Location = new System.Drawing.Point(4, 534);
-            this.lblDonGiaNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDonGiaNhap.Location = new System.Drawing.Point(3, 432);
             this.lblDonGiaNhap.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDonGiaNhap.Name = "lblDonGiaNhap";
             this.lblDonGiaNhap.Size = new System.Drawing.Size(100, 19);
@@ -272,8 +261,7 @@
             this.lblDonGiaBan.AutoSize = true;
             this.lblDonGiaBan.Depth = 0;
             this.lblDonGiaBan.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblDonGiaBan.Location = new System.Drawing.Point(4, 602);
-            this.lblDonGiaBan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDonGiaBan.Location = new System.Drawing.Point(3, 488);
             this.lblDonGiaBan.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblDonGiaBan.Name = "lblDonGiaBan";
             this.lblDonGiaBan.Size = new System.Drawing.Size(91, 19);
@@ -290,8 +278,7 @@
             this.txtTenQA.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTenQA.HideSelection = true;
             this.txtTenQA.LeadingIcon = null;
-            this.txtTenQA.Location = new System.Drawing.Point(170, 4);
-            this.txtTenQA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenQA.Location = new System.Drawing.Point(128, 3);
             this.txtTenQA.MaxLength = 32767;
             this.txtTenQA.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTenQA.Name = "txtTenQA";
@@ -303,7 +290,7 @@
             this.txtTenQA.SelectionLength = 0;
             this.txtTenQA.SelectionStart = 0;
             this.txtTenQA.ShortcutsEnabled = true;
-            this.txtTenQA.Size = new System.Drawing.Size(493, 48);
+            this.txtTenQA.Size = new System.Drawing.Size(370, 48);
             this.txtTenQA.TabIndex = 12;
             this.txtTenQA.TabStop = false;
             this.txtTenQA.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -318,12 +305,11 @@
             this.tableLayoutPanel3.Controls.Add(this.cboLoai, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.llblLoai, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(170, 68);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(128, 55);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(493, 56);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(370, 46);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
             // cboLoai
@@ -346,7 +332,7 @@
             this.cboLoai.MaxDropDownItems = 4;
             this.cboLoai.MouseState = MaterialSkin.MouseState.OUT;
             this.cboLoai.Name = "cboLoai";
-            this.cboLoai.Size = new System.Drawing.Size(404, 49);
+            this.cboLoai.Size = new System.Drawing.Size(303, 49);
             this.cboLoai.StartIndex = 0;
             this.cboLoai.TabIndex = 0;
             // 
@@ -354,10 +340,9 @@
             // 
             this.llblLoai.AutoSize = true;
             this.llblLoai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.llblLoai.Location = new System.Drawing.Point(408, 0);
-            this.llblLoai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblLoai.Location = new System.Drawing.Point(306, 0);
             this.llblLoai.Name = "llblLoai";
-            this.llblLoai.Size = new System.Drawing.Size(81, 56);
+            this.llblLoai.Size = new System.Drawing.Size(61, 46);
             this.llblLoai.TabIndex = 1;
             this.llblLoai.TabStop = true;
             this.llblLoai.Text = "Thêm mới";
@@ -371,12 +356,11 @@
             this.tableLayoutPanel4.Controls.Add(this.cboCo, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.llblCo, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(170, 132);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(128, 107);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(493, 56);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(370, 46);
             this.tableLayoutPanel4.TabIndex = 14;
             // 
             // cboCo
@@ -399,7 +383,7 @@
             this.cboCo.MaxDropDownItems = 4;
             this.cboCo.MouseState = MaterialSkin.MouseState.OUT;
             this.cboCo.Name = "cboCo";
-            this.cboCo.Size = new System.Drawing.Size(404, 49);
+            this.cboCo.Size = new System.Drawing.Size(303, 49);
             this.cboCo.StartIndex = 0;
             this.cboCo.TabIndex = 0;
             // 
@@ -407,10 +391,9 @@
             // 
             this.llblCo.AutoSize = true;
             this.llblCo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.llblCo.Location = new System.Drawing.Point(408, 0);
-            this.llblCo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblCo.Location = new System.Drawing.Point(306, 0);
             this.llblCo.Name = "llblCo";
-            this.llblCo.Size = new System.Drawing.Size(81, 56);
+            this.llblCo.Size = new System.Drawing.Size(61, 46);
             this.llblCo.TabIndex = 1;
             this.llblCo.TabStop = true;
             this.llblCo.Text = "Thêm mới";
@@ -424,12 +407,11 @@
             this.tableLayoutPanel5.Controls.Add(this.cboChatLieu, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.llblChatLieu, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(170, 196);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(128, 159);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(493, 56);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(370, 46);
             this.tableLayoutPanel5.TabIndex = 15;
             // 
             // cboChatLieu
@@ -452,7 +434,7 @@
             this.cboChatLieu.MaxDropDownItems = 4;
             this.cboChatLieu.MouseState = MaterialSkin.MouseState.OUT;
             this.cboChatLieu.Name = "cboChatLieu";
-            this.cboChatLieu.Size = new System.Drawing.Size(404, 49);
+            this.cboChatLieu.Size = new System.Drawing.Size(303, 49);
             this.cboChatLieu.StartIndex = 0;
             this.cboChatLieu.TabIndex = 0;
             // 
@@ -460,10 +442,9 @@
             // 
             this.llblChatLieu.AutoSize = true;
             this.llblChatLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.llblChatLieu.Location = new System.Drawing.Point(408, 0);
-            this.llblChatLieu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblChatLieu.Location = new System.Drawing.Point(306, 0);
             this.llblChatLieu.Name = "llblChatLieu";
-            this.llblChatLieu.Size = new System.Drawing.Size(81, 56);
+            this.llblChatLieu.Size = new System.Drawing.Size(61, 46);
             this.llblChatLieu.TabIndex = 1;
             this.llblChatLieu.TabStop = true;
             this.llblChatLieu.Text = "Thêm mới";
@@ -477,12 +458,11 @@
             this.tableLayoutPanel6.Controls.Add(this.cboMau, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.llblMau, 1, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(170, 260);
-            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(128, 211);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(493, 56);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(370, 46);
             this.tableLayoutPanel6.TabIndex = 16;
             // 
             // cboMau
@@ -505,7 +485,7 @@
             this.cboMau.MaxDropDownItems = 4;
             this.cboMau.MouseState = MaterialSkin.MouseState.OUT;
             this.cboMau.Name = "cboMau";
-            this.cboMau.Size = new System.Drawing.Size(404, 49);
+            this.cboMau.Size = new System.Drawing.Size(303, 49);
             this.cboMau.StartIndex = 0;
             this.cboMau.TabIndex = 0;
             // 
@@ -513,10 +493,9 @@
             // 
             this.llblMau.AutoSize = true;
             this.llblMau.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.llblMau.Location = new System.Drawing.Point(408, 0);
-            this.llblMau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblMau.Location = new System.Drawing.Point(306, 0);
             this.llblMau.Name = "llblMau";
-            this.llblMau.Size = new System.Drawing.Size(81, 56);
+            this.llblMau.Size = new System.Drawing.Size(61, 46);
             this.llblMau.TabIndex = 1;
             this.llblMau.TabStop = true;
             this.llblMau.Text = "Thêm mới";
@@ -530,12 +509,11 @@
             this.tableLayoutPanel7.Controls.Add(this.cboDoiTuong, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.llblDoiTuong, 1, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(170, 324);
-            this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(128, 263);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(493, 56);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(370, 46);
             this.tableLayoutPanel7.TabIndex = 17;
             // 
             // cboDoiTuong
@@ -558,7 +536,7 @@
             this.cboDoiTuong.MaxDropDownItems = 4;
             this.cboDoiTuong.MouseState = MaterialSkin.MouseState.OUT;
             this.cboDoiTuong.Name = "cboDoiTuong";
-            this.cboDoiTuong.Size = new System.Drawing.Size(404, 49);
+            this.cboDoiTuong.Size = new System.Drawing.Size(303, 49);
             this.cboDoiTuong.StartIndex = 0;
             this.cboDoiTuong.TabIndex = 0;
             // 
@@ -566,10 +544,9 @@
             // 
             this.llblDoiTuong.AutoSize = true;
             this.llblDoiTuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.llblDoiTuong.Location = new System.Drawing.Point(408, 0);
-            this.llblDoiTuong.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblDoiTuong.Location = new System.Drawing.Point(306, 0);
             this.llblDoiTuong.Name = "llblDoiTuong";
-            this.llblDoiTuong.Size = new System.Drawing.Size(81, 56);
+            this.llblDoiTuong.Size = new System.Drawing.Size(61, 46);
             this.llblDoiTuong.TabIndex = 1;
             this.llblDoiTuong.TabStop = true;
             this.llblDoiTuong.Text = "Thêm mới";
@@ -583,12 +560,11 @@
             this.tableLayoutPanel8.Controls.Add(this.cboMua, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.llblMua, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(170, 388);
-            this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(128, 315);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(493, 56);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(370, 46);
             this.tableLayoutPanel8.TabIndex = 18;
             // 
             // cboMua
@@ -611,7 +587,7 @@
             this.cboMua.MaxDropDownItems = 4;
             this.cboMua.MouseState = MaterialSkin.MouseState.OUT;
             this.cboMua.Name = "cboMua";
-            this.cboMua.Size = new System.Drawing.Size(404, 49);
+            this.cboMua.Size = new System.Drawing.Size(303, 49);
             this.cboMua.StartIndex = 0;
             this.cboMua.TabIndex = 0;
             // 
@@ -619,10 +595,9 @@
             // 
             this.llblMua.AutoSize = true;
             this.llblMua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.llblMua.Location = new System.Drawing.Point(408, 0);
-            this.llblMua.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblMua.Location = new System.Drawing.Point(306, 0);
             this.llblMua.Name = "llblMua";
-            this.llblMua.Size = new System.Drawing.Size(81, 56);
+            this.llblMua.Size = new System.Drawing.Size(61, 46);
             this.llblMua.TabIndex = 1;
             this.llblMua.TabStop = true;
             this.llblMua.Text = "Thêm mới";
@@ -636,22 +611,20 @@
             this.tableLayoutPanel9.Controls.Add(this.llblNSX, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.cboNSX, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(170, 452);
-            this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(128, 367);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(493, 56);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(370, 46);
             this.tableLayoutPanel9.TabIndex = 19;
             // 
             // llblNSX
             // 
             this.llblNSX.AutoSize = true;
             this.llblNSX.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.llblNSX.Location = new System.Drawing.Point(408, 0);
-            this.llblNSX.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.llblNSX.Location = new System.Drawing.Point(306, 0);
             this.llblNSX.Name = "llblNSX";
-            this.llblNSX.Size = new System.Drawing.Size(81, 56);
+            this.llblNSX.Size = new System.Drawing.Size(61, 46);
             this.llblNSX.TabIndex = 1;
             this.llblNSX.TabStop = true;
             this.llblNSX.Text = "Thêm mới";
@@ -677,7 +650,7 @@
             this.cboNSX.MaxDropDownItems = 4;
             this.cboNSX.MouseState = MaterialSkin.MouseState.OUT;
             this.cboNSX.Name = "cboNSX";
-            this.cboNSX.Size = new System.Drawing.Size(404, 49);
+            this.cboNSX.Size = new System.Drawing.Size(303, 49);
             this.cboNSX.StartIndex = 0;
             this.cboNSX.TabIndex = 0;
             // 
@@ -691,8 +664,7 @@
             this.txtDonGiaNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDonGiaNhap.HideSelection = true;
             this.txtDonGiaNhap.LeadingIcon = null;
-            this.txtDonGiaNhap.Location = new System.Drawing.Point(170, 516);
-            this.txtDonGiaNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDonGiaNhap.Location = new System.Drawing.Point(128, 419);
             this.txtDonGiaNhap.MaxLength = 32767;
             this.txtDonGiaNhap.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDonGiaNhap.Name = "txtDonGiaNhap";
@@ -704,7 +676,7 @@
             this.txtDonGiaNhap.SelectionLength = 0;
             this.txtDonGiaNhap.SelectionStart = 0;
             this.txtDonGiaNhap.ShortcutsEnabled = true;
-            this.txtDonGiaNhap.Size = new System.Drawing.Size(493, 48);
+            this.txtDonGiaNhap.Size = new System.Drawing.Size(370, 48);
             this.txtDonGiaNhap.TabIndex = 20;
             this.txtDonGiaNhap.TabStop = false;
             this.txtDonGiaNhap.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -721,8 +693,7 @@
             this.txtDonGiaBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtDonGiaBan.HideSelection = true;
             this.txtDonGiaBan.LeadingIcon = null;
-            this.txtDonGiaBan.Location = new System.Drawing.Point(170, 580);
-            this.txtDonGiaBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDonGiaBan.Location = new System.Drawing.Point(128, 471);
             this.txtDonGiaBan.MaxLength = 32767;
             this.txtDonGiaBan.MouseState = MaterialSkin.MouseState.OUT;
             this.txtDonGiaBan.Name = "txtDonGiaBan";
@@ -734,7 +705,7 @@
             this.txtDonGiaBan.SelectionLength = 0;
             this.txtDonGiaBan.SelectionStart = 0;
             this.txtDonGiaBan.ShortcutsEnabled = true;
-            this.txtDonGiaBan.Size = new System.Drawing.Size(493, 48);
+            this.txtDonGiaBan.Size = new System.Drawing.Size(370, 48);
             this.txtDonGiaBan.TabIndex = 21;
             this.txtDonGiaBan.TabStop = false;
             this.txtDonGiaBan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -749,8 +720,7 @@
             this.tableLayoutPanel10.Controls.Add(this.btnLuu, 0, 3);
             this.tableLayoutPanel10.Controls.Add(this.pictureBox1, 0, 1);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 5;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -758,7 +728,7 @@
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(442, 647);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(331, 527);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // btnAnh
@@ -769,8 +739,8 @@
             this.btnAnh.Depth = 0;
             this.btnAnh.HighEmphasis = true;
             this.btnAnh.Icon = null;
-            this.btnAnh.Location = new System.Drawing.Point(172, 417);
-            this.btnAnh.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btnAnh.Location = new System.Drawing.Point(117, 336);
+            this.btnAnh.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAnh.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAnh.Name = "btnAnh";
             this.btnAnh.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -790,8 +760,8 @@
             this.btnLuu.Depth = 0;
             this.btnLuu.HighEmphasis = true;
             this.btnLuu.Icon = null;
-            this.btnLuu.Location = new System.Drawing.Point(156, 538);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
+            this.btnLuu.Location = new System.Drawing.Point(100, 431);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLuu.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -807,22 +777,20 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 70);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(5, 57);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(428, 311);
+            this.pictureBox1.Size = new System.Drawing.Size(321, 253);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
             // ThemSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 738);
+            this.ClientSize = new System.Drawing.Size(850, 600);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ThemSanPham";
-            this.Padding = new System.Windows.Forms.Padding(4, 79, 4, 4);
             this.Text = "Thêm sản phẩm mới";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

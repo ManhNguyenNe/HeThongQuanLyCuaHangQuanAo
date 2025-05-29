@@ -126,6 +126,12 @@
     <Compile Include="Forms\formChiTietHDNhap.Designer.cs">
       <DependentUpon>formChiTietHDNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\formDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formDoiMatKhau.Designer.cs">
+      <DependentUpon>formDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\formKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +270,12 @@
     <Compile Include="Forms\ucThongKeKHTN.Designer.cs">
       <DependentUpon>ucThongKeKHTN.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ucTrangChu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ucTrangChu.Designer.cs">
+      <DependentUpon>ucTrangChu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\XuatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formChiTietHDNhap.resx">
       <DependentUpon>formChiTietHDNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formDoiMatKhau.resx">
+      <DependentUpon>formDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\formKhachHang.resx">
       <DependentUpon>formKhachHang.cs</DependentUpon>
@@ -377,6 +392,9 @@
     <EmbeddedResource Include="Forms\ucThongKeKHTN.resx">
       <DependentUpon>ucThongKeKHTN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ucTrangChu.resx">
+      <DependentUpon>ucTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\XuatHang.resx">
       <DependentUpon>XuatHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -405,16 +423,21 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\Cac-tone-mau-nhe-nhang-se-mang-den-cam-giac-de-chiu-cho-khach-hang.jpg" />
     <Content Include="Resources\icons8-account-32.png" />
     <Content Include="Resources\icons8-analytics-32.png" />
     <Content Include="Resources\icons8-checkout-32.png" />
     <Content Include="Resources\icons8-customer-32.png" />
     <Content Include="Resources\icons8-input-32.png" />
     <Content Include="Resources\icons8-logout-32.png" />
+    <Content Include="Resources\icons8-privacy-32.png" />
     <Content Include="Resources\icons8-product-32.png" />
     <Content Include="Resources\icons8-supplier-32.png" />
     <Content Include="Resources\icons8-user-32.png" />
     <Content Include="Resources\icons8-warehouse-32.png" />
+    <Content Include="Resources\Khong-gian-cua-hang-toi-uu-noi-that-tinh-te.jpg" />
+    <Content Include="Resources\Thiet-ke-noi-that-shop-thoi-trang-theo-phong-cach-hien-dai.jpg" />
+    <Content Include="Resources\Thiet-ke-shop-quan-ao-nu-nho-dep-vua-tiet-kiem-khong-gian-vua-tang-suc-canh-tranh.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

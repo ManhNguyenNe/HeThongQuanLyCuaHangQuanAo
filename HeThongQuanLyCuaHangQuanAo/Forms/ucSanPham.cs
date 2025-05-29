@@ -22,21 +22,15 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         public ucSanPham()
         {
             InitializeComponent();
-            this.Resize += ucSanPham_Resize;
             if (UserSession.VaiTro == 1 || UserSession.VaiTro == 2)
             {
                 btnThem.Visible = false;
                 btnSua.Visible = false;
-                btnXoa.Visible = false;
+                //btnXoa.Visible = false;
             }
         }
 
-        private void ucSanPham_Resize(object sender, EventArgs e)
-        {
-            Console.WriteLine($"UserControl kích thước: {this.Width} x {this.Height}");
-        }
-
-        private void LoadData()
+        public void LoadData()
         {
             var danhSach = sanPhamBUS.GetSanPhamViews();
             materialListView1.Items.Clear();
@@ -171,6 +165,12 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 item.SubItems.Add(sp.DonGiaBan.ToString() + " VNĐ");
                 materialListView1.Items.Add(item);
             }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Clear();
+            LoadData();
         }
     }
     

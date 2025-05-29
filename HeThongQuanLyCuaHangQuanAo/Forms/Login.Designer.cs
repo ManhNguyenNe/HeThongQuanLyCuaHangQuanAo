@@ -36,6 +36,7 @@
             this.txtMatKhau = new MaterialSkin.Controls.MaterialTextBox2();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btnDangNhap = new MaterialSkin.Controls.MaterialButton();
+            this.btnThoat = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -164,9 +165,11 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.btnDangNhap, 0, 0);
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.btnThoat, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnDangNhap, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 151);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
@@ -185,7 +188,7 @@
             this.btnDangNhap.Depth = 0;
             this.btnDangNhap.HighEmphasis = true;
             this.btnDangNhap.Icon = null;
-            this.btnDangNhap.Location = new System.Drawing.Point(169, 14);
+            this.btnDangNhap.Location = new System.Drawing.Point(280, 14);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnDangNhap.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnDangNhap.Name = "btnDangNhap";
@@ -197,6 +200,27 @@
             this.btnDangNhap.UseAccentColor = false;
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnThoat.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnThoat.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnThoat.Depth = 0;
+            this.btnThoat.HighEmphasis = true;
+            this.btnThoat.Icon = null;
+            this.btnThoat.Location = new System.Drawing.Point(76, 14);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnThoat.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnThoat.Size = new System.Drawing.Size(69, 36);
+            this.btnThoat.TabIndex = 1;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnThoat.UseAccentColor = false;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // Login
             // 
@@ -225,5 +249,6 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtTenDangNhap;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private MaterialSkin.Controls.MaterialButton btnDangNhap;
+        private MaterialSkin.Controls.MaterialButton btnThoat;
     }
 }

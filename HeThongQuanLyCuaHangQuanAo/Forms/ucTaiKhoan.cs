@@ -146,7 +146,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             // Kiểm tra xem đã chọn tài khoản chưa
             if (materialListView1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn tài khoản cần sửa.", "Thông báo",
+                MessageBox.Show("Vui lòng chọn tài khoản cần reset mật khẩu.", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -154,12 +154,27 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             // Lấy mã tài khoản từ dòng được chọn
             string maTK = materialListView1.SelectedItems[0].Text;
 
-            // Mở form tài khoản ở chế độ cập nhật
-            var formCapNhat = new formTaiKhoan(maTK);
-            if (formCapNhat.ShowDialog() == DialogResult.OK)
+            // Hiển thị hộp thoại xác nhận
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn reset mật khẩu về mặc định (12345678) không?",
+                "Xác nhận reset mật khẩu", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                LoadData();
+                // Thực hiện reset mật khẩu
+                bool success = _taiKhoanBUS.DatLaiMatKhau(maTK, "12345678");
+                if (success)
+                {
+                    MessageBox.Show("Reset mật khẩu thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                }
             }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Clear();
+            LoadData();
         }
     }
 }

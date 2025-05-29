@@ -187,6 +187,12 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             cell.BackgroundColor = BaseColor.LIGHT_GRAY;
             table.AddCell(cell);
         }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Clear();
+            LoadData();
+        }
     }
 }
     

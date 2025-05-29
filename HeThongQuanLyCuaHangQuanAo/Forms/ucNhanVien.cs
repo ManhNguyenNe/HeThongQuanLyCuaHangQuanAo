@@ -169,6 +169,12 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 MessageBox.Show("Xuất danh sách nhân viên ra PDF thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Clear();
+            LoadData();
+        }
     }
 }
         

@@ -81,7 +81,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
             nsx.TenNSX,
             sp.SoLuong,
             sp.Anh,
-            sp.DonGiaBan
+            sp.DonGiaBan,
+            sp.DonGiaNhap
         FROM SanPham sp
         JOIN TheLoai l ON sp.MaLoai = l.MaLoai
         JOIN Co c ON sp.MaCo = c.MaCo
@@ -114,7 +115,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             TenNSX = reader["TenNSX"].ToString(),
                             SoLuong = Convert.ToInt32(reader["SoLuong"]),
                             Anh = reader["Anh"].ToString(),
-                            DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"])
+                            DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"]),
+                            DonGiaNhap = Convert.ToDecimal(reader["DonGiaNhap"])
                         };
                     }
                 }

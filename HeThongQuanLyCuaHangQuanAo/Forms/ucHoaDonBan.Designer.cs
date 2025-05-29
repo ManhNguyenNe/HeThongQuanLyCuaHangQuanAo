@@ -30,10 +30,10 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnXuatHoaDonBan = new MaterialSkin.Controls.MaterialButton();
             this.btnTimKiem = new MaterialSkin.Controls.MaterialButton();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnThem = new MaterialSkin.Controls.MaterialButton();
-            this.btnXuatHoaDonBan = new System.Windows.Forms.Button();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.clnMaHD = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnMaNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -42,6 +42,7 @@
             this.clnMaKhach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnTenKhach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnTongTien = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnLamMoi = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,16 +65,18 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnCount = 6;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Controls.Add(this.btnLamMoi, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnXuatHoaDonBan, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTimKiem, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnThem, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnXuatHoaDonBan, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnThem, 5, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -82,15 +85,36 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1182, 66);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // btnXuatHoaDonBan
+            // 
+            this.btnXuatHoaDonBan.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnXuatHoaDonBan.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnXuatHoaDonBan.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnXuatHoaDonBan.Depth = 0;
+            this.btnXuatHoaDonBan.HighEmphasis = true;
+            this.btnXuatHoaDonBan.Icon = null;
+            this.btnXuatHoaDonBan.Location = new System.Drawing.Point(762, 15);
+            this.btnXuatHoaDonBan.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnXuatHoaDonBan.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnXuatHoaDonBan.Name = "btnXuatHoaDonBan";
+            this.btnXuatHoaDonBan.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnXuatHoaDonBan.Size = new System.Drawing.Size(127, 36);
+            this.btnXuatHoaDonBan.TabIndex = 12;
+            this.btnXuatHoaDonBan.Text = "Xuất Hóa Đơn";
+            this.btnXuatHoaDonBan.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnXuatHoaDonBan.UseAccentColor = false;
+            this.btnXuatHoaDonBan.UseVisualStyleBackColor = true;
+            this.btnXuatHoaDonBan.Click += new System.EventHandler(this.btnXuatHoaDonBan_Click);
+            // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTimKiem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnTimKiem.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnTimKiem.Depth = 0;
             this.btnTimKiem.HighEmphasis = true;
             this.btnTimKiem.Icon = null;
-            this.btnTimKiem.Location = new System.Drawing.Point(476, 15);
+            this.btnTimKiem.Location = new System.Drawing.Point(488, 15);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTimKiem.Name = "btnTimKiem";
@@ -218,6 +242,27 @@
             this.clnTongTien.Text = "Tổng tiền";
             this.clnTongTien.Width = 150;
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLamMoi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLamMoi.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnLamMoi.Depth = 0;
+            this.btnLamMoi.HighEmphasis = true;
+            this.btnLamMoi.Icon = null;
+            this.btnLamMoi.Location = new System.Drawing.Point(607, 15);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLamMoi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnLamMoi.Size = new System.Drawing.Size(83, 36);
+            this.btnLamMoi.TabIndex = 13;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnLamMoi.UseAccentColor = false;
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // ucHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,19 +275,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
-            // 
-            // btnXuatHoaDonBan
-            // 
-            this.btnXuatHoaDonBan.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnXuatHoaDonBan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnXuatHoaDonBan.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnXuatHoaDonBan.Location = new System.Drawing.Point(829, 12);
-            this.btnXuatHoaDonBan.Name = "btnXuatHoaDonBan";
-            this.btnXuatHoaDonBan.Size = new System.Drawing.Size(112, 41);
-            this.btnXuatHoaDonBan.TabIndex = 11;
-            this.btnXuatHoaDonBan.Text = "Xuất Hóa Đơn";
-            this.btnXuatHoaDonBan.UseVisualStyleBackColor = false;
-            this.btnXuatHoaDonBan.Click += new System.EventHandler(this.btnXuatHoaDonBan_Click);
 
         }
 
@@ -261,6 +293,7 @@
         private System.Windows.Forms.ColumnHeader clnMaKhach;
         private System.Windows.Forms.ColumnHeader clnTenKhach;
         private System.Windows.Forms.ColumnHeader clnTongTien;
-        private System.Windows.Forms.Button btnXuatHoaDonBan;
+        private MaterialSkin.Controls.MaterialButton btnXuatHoaDonBan;
+        private MaterialSkin.Controls.MaterialButton btnLamMoi;
     }
 }

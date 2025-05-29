@@ -41,6 +41,14 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 txtDoiTuong.Text = sanPham.TenDoiTuong;
                 txtMua.Text = sanPham.TenMua;
                 txtNSX.Text = sanPham.TenNSX;
+                if (UserSession.VaiTro == 1)
+                {
+                    txtDonGiaNhap.Text = "**********";
+                }
+                else
+                {
+                    txtDonGiaNhap.Text = sanPham.DonGiaNhap.ToString();
+                }
                 txtDonGiaBan.Text = sanPham.DonGiaBan.ToString();
 
                 if (!string.IsNullOrEmpty(sanPham.Anh))

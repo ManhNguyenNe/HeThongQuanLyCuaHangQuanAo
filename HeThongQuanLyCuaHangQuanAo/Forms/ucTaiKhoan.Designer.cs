@@ -39,8 +39,9 @@
             this.btnXoa = new MaterialSkin.Controls.MaterialButton();
             this.btnTimKiem = new MaterialSkin.Controls.MaterialButton();
             this.txtTimKiem = new MaterialSkin.Controls.MaterialTextBox2();
-            this.btnSua = new MaterialSkin.Controls.MaterialButton();
+            this.btnReset = new MaterialSkin.Controls.MaterialButton();
             this.btnThem = new MaterialSkin.Controls.MaterialButton();
+            this.btnLamMoi = new MaterialSkin.Controls.MaterialButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,11 +54,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1188, 727);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2376, 1398);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // materialListView1
@@ -76,13 +78,14 @@
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(3, 75);
-            this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
+            this.materialListView1.Location = new System.Drawing.Point(6, 145);
+            this.materialListView1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.materialListView1.MinimumSize = new System.Drawing.Size(400, 192);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(1182, 649);
+            this.materialListView1.Size = new System.Drawing.Size(2364, 1247);
             this.materialListView1.TabIndex = 0;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -114,24 +117,27 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnCount = 7;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel2.Controls.Add(this.btnXoa, 2, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Controls.Add(this.btnLamMoi, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTimKiem, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSua, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnThem, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnThem, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnReset, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnXoa, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1182, 66);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(2364, 127);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // btnXoa
@@ -142,8 +148,8 @@
             this.btnXoa.Depth = 0;
             this.btnXoa.HighEmphasis = true;
             this.btnXoa.Icon = null;
-            this.btnXoa.Location = new System.Drawing.Point(853, 15);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnXoa.Location = new System.Drawing.Point(1739, 45);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -157,14 +163,14 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTimKiem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnTimKiem.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnTimKiem.Depth = 0;
             this.btnTimKiem.HighEmphasis = true;
             this.btnTimKiem.Icon = null;
-            this.btnTimKiem.Location = new System.Drawing.Point(476, 15);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnTimKiem.Location = new System.Drawing.Point(1020, 45);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btnTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -186,7 +192,8 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTimKiem.HideSelection = true;
             this.txtTimKiem.LeadingIcon = null;
-            this.txtTimKiem.Location = new System.Drawing.Point(41, 9);
+            this.txtTimKiem.Location = new System.Drawing.Point(83, 39);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.txtTimKiem.MaxLength = 32767;
             this.txtTimKiem.MouseState = MaterialSkin.MouseState.OUT;
             this.txtTimKiem.Name = "txtTimKiem";
@@ -198,33 +205,33 @@
             this.txtTimKiem.SelectionLength = 0;
             this.txtTimKiem.SelectionStart = 0;
             this.txtTimKiem.ShortcutsEnabled = true;
-            this.txtTimKiem.Size = new System.Drawing.Size(389, 48);
+            this.txtTimKiem.Size = new System.Drawing.Size(778, 48);
             this.txtTimKiem.TabIndex = 6;
             this.txtTimKiem.TabStop = false;
             this.txtTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtTimKiem.TrailingIcon = null;
             this.txtTimKiem.UseSystemPasswordChar = false;
             // 
-            // btnSua
+            // btnReset
             // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnSua.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSua.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnSua.Depth = 0;
-            this.btnSua.HighEmphasis = true;
-            this.btnSua.Icon = null;
-            this.btnSua.Location = new System.Drawing.Point(971, 15);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnSua.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSua.Name = "btnSua";
-            this.btnSua.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnSua.Size = new System.Drawing.Size(64, 36);
-            this.btnSua.TabIndex = 8;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnSua.UseAccentColor = false;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnReset.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReset.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnReset.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnReset.Depth = 0;
+            this.btnReset.HighEmphasis = true;
+            this.btnReset.Icon = null;
+            this.btnReset.Location = new System.Drawing.Point(1974, 45);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.btnReset.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnReset.Name = "btnReset";
+            this.btnReset.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnReset.Size = new System.Drawing.Size(65, 36);
+            this.btnReset.TabIndex = 8;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnReset.UseAccentColor = false;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -234,8 +241,8 @@
             this.btnThem.Depth = 0;
             this.btnThem.HighEmphasis = true;
             this.btnThem.Icon = null;
-            this.btnThem.Location = new System.Drawing.Point(1090, 15);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnThem.Location = new System.Drawing.Point(2212, 45);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.btnThem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThem.Name = "btnThem";
             this.btnThem.NoAccentTextColor = System.Drawing.Color.Empty;
@@ -247,13 +254,35 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLamMoi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLamMoi.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnLamMoi.Depth = 0;
+            this.btnLamMoi.HighEmphasis = true;
+            this.btnLamMoi.Icon = null;
+            this.btnLamMoi.Location = new System.Drawing.Point(1257, 45);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(8, 12, 8, 12);
+            this.btnLamMoi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnLamMoi.Size = new System.Drawing.Size(83, 36);
+            this.btnLamMoi.TabIndex = 11;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnLamMoi.UseAccentColor = false;
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // ucTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "ucTaiKhoan";
-            this.Size = new System.Drawing.Size(1188, 727);
+            this.Size = new System.Drawing.Size(2376, 1398);
             this.Load += new System.EventHandler(this.ucTaiKhoan_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -269,7 +298,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin.Controls.MaterialButton btnTimKiem;
         private MaterialSkin.Controls.MaterialTextBox2 txtTimKiem;
-        private MaterialSkin.Controls.MaterialButton btnSua;
+        private MaterialSkin.Controls.MaterialButton btnReset;
         private MaterialSkin.Controls.MaterialButton btnThem;
         private MaterialSkin.Controls.MaterialButton btnXoa;
         private System.Windows.Forms.ColumnHeader clnMaTK;
@@ -277,5 +306,6 @@
         private System.Windows.Forms.ColumnHeader clnTenNV;
         private System.Windows.Forms.ColumnHeader clnTenDangNhap;
         private System.Windows.Forms.ColumnHeader clnQuyen;
+        private MaterialSkin.Controls.MaterialButton btnLamMoi;
     }
 }

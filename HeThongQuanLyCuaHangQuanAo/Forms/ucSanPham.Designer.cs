@@ -30,11 +30,11 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnLamMoi = new MaterialSkin.Controls.MaterialButton();
             this.btnTimKiem = new MaterialSkin.Controls.MaterialButton();
-            this.btnXoa = new MaterialSkin.Controls.MaterialButton();
+            this.txtTimKiem = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnThem = new MaterialSkin.Controls.MaterialButton();
             this.btnSua = new MaterialSkin.Controls.MaterialButton();
-            this.txtTimKiem = new MaterialSkin.Controls.MaterialTextBox2();
             this.materialListView1 = new MaterialSkin.Controls.MaterialListView();
             this.clnMaQA = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnTenQA = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,17 +65,18 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnCount = 6;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tableLayoutPanel2.Controls.Add(this.btnLamMoi, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnTimKiem, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnXoa, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnThem, 4, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSua, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtTimKiem, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnThem, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSua, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -84,15 +85,36 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1182, 66);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLamMoi.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLamMoi.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnLamMoi.Depth = 0;
+            this.btnLamMoi.HighEmphasis = true;
+            this.btnLamMoi.Icon = null;
+            this.btnLamMoi.Location = new System.Drawing.Point(607, 15);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLamMoi.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnLamMoi.Size = new System.Drawing.Size(83, 36);
+            this.btnLamMoi.TabIndex = 5;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnLamMoi.UseAccentColor = false;
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTimKiem.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnTimKiem.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.btnTimKiem.Depth = 0;
             this.btnTimKiem.HighEmphasis = true;
             this.btnTimKiem.Icon = null;
-            this.btnTimKiem.Location = new System.Drawing.Point(476, 15);
+            this.btnTimKiem.Location = new System.Drawing.Point(488, 15);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTimKiem.Name = "btnTimKiem";
@@ -105,26 +127,34 @@
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // btnXoa
+            // txtTimKiem
             // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnXoa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnXoa.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnXoa.Depth = 0;
-            this.btnXoa.HighEmphasis = true;
-            this.btnXoa.Icon = null;
-            this.btnXoa.Location = new System.Drawing.Point(853, 15);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnXoa.Size = new System.Drawing.Size(64, 36);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnXoa.UseAccentColor = false;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTimKiem.AnimateReadOnly = false;
+            this.txtTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtTimKiem.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtTimKiem.Depth = 0;
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTimKiem.HideSelection = true;
+            this.txtTimKiem.LeadingIcon = null;
+            this.txtTimKiem.Location = new System.Drawing.Point(41, 9);
+            this.txtTimKiem.MaxLength = 32767;
+            this.txtTimKiem.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.PasswordChar = '\0';
+            this.txtTimKiem.PrefixSuffixText = null;
+            this.txtTimKiem.ReadOnly = false;
+            this.txtTimKiem.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTimKiem.SelectedText = "";
+            this.txtTimKiem.SelectionLength = 0;
+            this.txtTimKiem.SelectionStart = 0;
+            this.txtTimKiem.ShortcutsEnabled = true;
+            this.txtTimKiem.Size = new System.Drawing.Size(389, 48);
+            this.txtTimKiem.TabIndex = 4;
+            this.txtTimKiem.TabStop = false;
+            this.txtTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtTimKiem.TrailingIcon = null;
+            this.txtTimKiem.UseSystemPasswordChar = false;
             // 
             // btnThem
             // 
@@ -167,35 +197,6 @@
             this.btnSua.UseAccentColor = false;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTimKiem.AnimateReadOnly = false;
-            this.txtTimKiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtTimKiem.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtTimKiem.Depth = 0;
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtTimKiem.HideSelection = true;
-            this.txtTimKiem.LeadingIcon = null;
-            this.txtTimKiem.Location = new System.Drawing.Point(41, 9);
-            this.txtTimKiem.MaxLength = 32767;
-            this.txtTimKiem.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.PasswordChar = '\0';
-            this.txtTimKiem.PrefixSuffixText = null;
-            this.txtTimKiem.ReadOnly = false;
-            this.txtTimKiem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtTimKiem.SelectedText = "";
-            this.txtTimKiem.SelectionLength = 0;
-            this.txtTimKiem.SelectionStart = 0;
-            this.txtTimKiem.ShortcutsEnabled = true;
-            this.txtTimKiem.Size = new System.Drawing.Size(389, 48);
-            this.txtTimKiem.TabIndex = 4;
-            this.txtTimKiem.TabStop = false;
-            this.txtTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtTimKiem.TrailingIcon = null;
-            this.txtTimKiem.UseSystemPasswordChar = false;
             // 
             // materialListView1
             // 
@@ -276,7 +277,6 @@
             this.Name = "ucSanPham";
             this.Size = new System.Drawing.Size(1188, 727);
             this.Load += new System.EventHandler(this.ucSanPham_Load);
-            this.Resize += new System.EventHandler(this.ucSanPham_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -298,9 +298,9 @@
         private System.Windows.Forms.ColumnHeader clNSX;
         private System.Windows.Forms.ColumnHeader clnGiaBan;
         private MaterialSkin.Controls.MaterialButton btnTimKiem;
-        private MaterialSkin.Controls.MaterialButton btnXoa;
         private MaterialSkin.Controls.MaterialButton btnThem;
         private MaterialSkin.Controls.MaterialButton btnSua;
         private MaterialSkin.Controls.MaterialTextBox2 txtTimKiem;
+        private MaterialSkin.Controls.MaterialButton btnLamMoi;
     }
 }
