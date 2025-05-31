@@ -104,7 +104,7 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                     TenDangNhap = tenDangNhap,
                     MatKhau = matKhau, // Lưu mật khẩu không mã hóa
                     VaiTro = vaiTro,
-                    TinhTrang = true // Mặc định tài khoản mới là hoạt động
+                    //TinhTrang = true // Mặc định tài khoản mới là hoạt động
                 };
 
                 // Thêm tài khoản vào CSDL
@@ -119,7 +119,7 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
         }
 
         // Cập nhật tài khoản
-        public bool CapNhatTaiKhoan(string maTK, string maNV, string tenDangNhap, int vaiTro, bool tinhTrang)
+        public bool CapNhatTaiKhoan(string maTK, string maNV, string tenDangNhap, int vaiTro)
         {
             try
             {
@@ -176,7 +176,7 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                 taiKhoan.MaNV = maNV;
                 taiKhoan.TenDangNhap = tenDangNhap;
                 taiKhoan.VaiTro = vaiTro;
-                taiKhoan.TinhTrang = tinhTrang;
+                //taiKhoan.TinhTrang = tinhTrang;
 
                 // Cập nhật tài khoản trong CSDL
                 return _taiKhoanDAL.UpdateTaiKhoan(taiKhoan);
@@ -400,7 +400,7 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
                         TenDangNhap = taiKhoan.TenDangNhap,
                         MatKhau = taiKhoan.MatKhau,
                         VaiTro = taiKhoan.VaiTro,
-                        TinhTrang = taiKhoan.TinhTrang
+                        //TinhTrang = taiKhoan.TinhTrang
                     };
                 }
 

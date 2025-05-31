@@ -14,6 +14,6 @@ namespace HeThongQuanLyCuaHangQuanAo.ViewModels
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
         public int VaiTro { get; set; }
-        public bool TinhTrang { get; set; }
+        //public bool TinhTrang { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
         {
             List<TaiKhoanView> list = new List<TaiKhoanView>();
             string query = @"
-                SELECT tk.MaTK, tk.MaNV, nv.TenNV, tk.TenDangNhap, tk.MatKhau, tk.VaiTro, tk.TinhTrang
+                SELECT tk.MaTK, tk.MaNV, nv.TenNV, tk.TenDangNhap, tk.MatKhau, tk.VaiTro
                 FROM TaiKhoan tk
                 JOIN NhanVien nv ON tk.MaNV = nv.MaNV
                 ORDER BY tk.MaTK";
@@ -37,7 +37,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             TenDangNhap = reader["TenDangNhap"].ToString(),
                             MatKhau = reader["MatKhau"].ToString(),
                             VaiTro = Convert.ToInt32(reader["VaiTro"]),
-                            TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
+                            //TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
                         });
                     }
                 }
@@ -67,7 +67,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             TenDangNhap = reader["TenDangNhap"].ToString(),
                             MatKhau = reader["MatKhau"].ToString(),
                             VaiTro = Convert.ToInt32(reader["VaiTro"]),
-                            TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
+                            //TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
                         };
                     }
                 }
@@ -100,8 +100,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             MaNV = reader["MaNV"].ToString(),
                             TenDangNhap = reader["TenDangNhap"].ToString(),
                             MatKhau = reader["MatKhau"].ToString(),
-                            VaiTro = Convert.ToInt32(reader["VaiTro"]),
-                            TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
+                            VaiTro = Convert.ToInt32(reader["VaiTro"])
+                            //TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
                         };
                     }
                 }
@@ -131,8 +131,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             MaNV = reader["MaNV"].ToString(),
                             TenDangNhap = reader["TenDangNhap"].ToString(),
                             MatKhau = reader["MatKhau"].ToString(),
-                            VaiTro = Convert.ToInt32(reader["VaiTro"]),
-                            TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
+                            VaiTro = Convert.ToInt32(reader["VaiTro"])
+                            //TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
                         };
                     }
                 }
@@ -144,8 +144,8 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
         public bool InsertTaiKhoan(TaiKhoan taiKhoan)
         {
             string query = @"
-                INSERT INTO TaiKhoan (MaTK, MaNV, TenDangNhap, MatKhau, VaiTro, TinhTrang)
-                VALUES (@MaTK, @MaNV, @TenDangNhap, @MatKhau, @VaiTro, @TinhTrang)";
+                INSERT INTO TaiKhoan (MaTK, MaNV, TenDangNhap, MatKhau, VaiTro)
+                VALUES (@MaTK, @MaNV, @TenDangNhap, @MatKhau, @VaiTro)";
 
             using (SqlConnection conn = DBHelper.GetConnection())
             using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -155,7 +155,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                 cmd.Parameters.AddWithValue("@TenDangNhap", taiKhoan.TenDangNhap);
                 cmd.Parameters.AddWithValue("@MatKhau", taiKhoan.MatKhau);
                 cmd.Parameters.AddWithValue("@VaiTro", taiKhoan.VaiTro);
-                cmd.Parameters.AddWithValue("@TinhTrang", taiKhoan.TinhTrang);
+                //cmd.Parameters.AddWithValue("@TinhTrang", taiKhoan.TinhTrang);
 
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
@@ -171,8 +171,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                 SET MaNV = @MaNV,
                     TenDangNhap = @TenDangNhap,
                     MatKhau = @MatKhau,
-                    VaiTro = @VaiTro,
-                    TinhTrang = @TinhTrang
+                    VaiTro = @VaiTro
                 WHERE MaTK = @MaTK";
 
             using (SqlConnection conn = DBHelper.GetConnection())
@@ -183,7 +182,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                 cmd.Parameters.AddWithValue("@TenDangNhap", taiKhoan.TenDangNhap);
                 cmd.Parameters.AddWithValue("@MatKhau", taiKhoan.MatKhau);
                 cmd.Parameters.AddWithValue("@VaiTro", taiKhoan.VaiTro);
-                cmd.Parameters.AddWithValue("@TinhTrang", taiKhoan.TinhTrang);
+                //cmd.Parameters.AddWithValue("@TinhTrang", taiKhoan.TinhTrang);
 
                 conn.Open();
                 int result = cmd.ExecuteNonQuery();
@@ -232,7 +231,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
         {
             List<TaiKhoanView> list = new List<TaiKhoanView>();
             string query = @"
-                SELECT tk.MaTK, tk.MaNV, nv.TenNV, tk.TenDangNhap, tk.MatKhau, tk.VaiTro, tk.TinhTrang
+                SELECT tk.MaTK, tk.MaNV, nv.TenNV, tk.TenDangNhap, tk.MatKhau, tk.VaiTro
                 FROM TaiKhoan tk
                 JOIN NhanVien nv ON tk.MaNV = nv.MaNV
                 WHERE tk.MaTK LIKE @TuKhoa
@@ -259,7 +258,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             TenDangNhap = reader["TenDangNhap"].ToString(),
                             MatKhau = reader["MatKhau"].ToString(),
                             VaiTro = Convert.ToInt32(reader["VaiTro"]),
-                            TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
+                            //TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
                         });
                     }
                 }

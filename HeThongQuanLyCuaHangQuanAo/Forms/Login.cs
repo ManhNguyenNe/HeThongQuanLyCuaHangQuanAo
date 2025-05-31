@@ -53,12 +53,12 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             if (taiKhoan != null)
             {
                 // Kiểm tra tình trạng tài khoản
-                if (!taiKhoan.TinhTrang)
-                {
-                    MessageBox.Show("Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên!",
-                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //if (!taiKhoan.TinhTrang)
+                //{
+                //    MessageBox.Show("Tài khoản của bạn đã bị khóa. Vui lòng liên hệ quản trị viên!",
+                //        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
 
                 // Lưu thông tin người dùng đăng nhập
                 UserSession.MaTK = taiKhoan.MaTK;
