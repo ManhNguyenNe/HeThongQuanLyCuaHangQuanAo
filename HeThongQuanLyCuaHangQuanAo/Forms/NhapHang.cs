@@ -8,15 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongQuanLyCuaHangQuanAo.BUS;
+using HeThongQuanLyCuaHangQuanAo.Models;
+using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace HeThongQuanLyCuaHangQuanAo.Forms
 {
     public partial class NhapHang : MaterialForm
     {
+        private MaterialListBox listBoxSuggestions;
+        private List<NCC> _danhSachNCC; // lưu danh sách NCC gốc
+
         private SanPhamBUS _sanPhamBUS = new SanPhamBUS();
         private HDNhapBUS _hdnBUS = new HDNhapBUS();
-        private ChiTietHDNhapBUS _chiTietHDNhapBUS = new ChiTietHDNhapBUS();
+        // private ChiTietHDNhapBUS _chiTietHDNhapBUS = new ChiTietHDNhapBUS();
         private NCCBUS _nccBUS = new NCCBUS();
         private List<tempChiTietHoaDonNhap> _gioHang = new List<tempChiTietHoaDonNhap>();
         private decimal _tongTien = 0;
@@ -24,15 +29,59 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
         public NhapHang()
         {
-            InitializeComponent(); 
+            InitializeComponent();
+
+            listBoxSuggestions = new MaterialListBox
+            {
+                Width = txtNCC.Width,
+                Height = 200,
+                Visible = false
+            };
+
+            this.Controls.Add(listBoxSuggestions);
+            listBoxSuggestions.BringToFront();
+
+            // Sự kiện hiển thị khi focus vào TextBox
+            txtNCC.GotFocus += (s, e) =>
+            {
+                listBoxSuggestions.Visible = true;
+            };
+
+            // Ẩn listBoxSuggestions khi txtSDTNCC hoặc listBoxSuggestions mất focus
+            txtNCC.LostFocus += (s, e) => HideListBoxIfFocusLost();
+            listBoxSuggestions.LostFocus += (s, e) => HideListBoxIfFocusLost();
+
+            listBoxSuggestions.SelectedIndexChanged += ListBoxSuggestions_SelectedIndexChanged;
+
+
+            // Bắt sự kiện gõ trong textbox để lọc listbox
+            txtNCC.TextChanged += (s, e) =>
+            {
+                UpdateSuggestionList(txtNCC.Text);
+            };
         }
 
         private void NhapHang_Load(object sender, EventArgs e)
         {
+            Point screenPos = txtNCC.PointToScreen(Point.Empty);
+            Point posInForm = this.PointToClient(screenPos);
+            listBoxSuggestions.Location = new Point(posInForm.X, posInForm.Y + txtNCC.Height);
+
             LoadSanPham();
             LoadNCC();
             UpdateTongTien();
             numGiamGia.Value = 0;
+        }
+
+        private void HideListBoxIfFocusLost()
+        {
+            this.BeginInvoke(new Action(() =>
+            {
+                if (!txtNCC.Focused && !listBoxSuggestions.Focused)
+                {
+                    listBoxSuggestions.Visible = false;
+                }
+            }));
         }
 
         private void LoadSanPham()
@@ -52,19 +101,45 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         }
         private void LoadNCC()
         {
-            var danhSachNCC = _nccBUS.GetAll();
+            _danhSachNCC = _nccBUS.GetAll();
 
-            // Tạo danh sách mới với các đối tượng ẩn danh
-            var danhSachHienThi = danhSachNCC.Select(ncc => new
+            UpdateSuggestionList("");
+            listBoxSuggestions.Visible = false; // Ẩn listBox lúc form mới load
+        }
+
+        private void UpdateSuggestionList(string filter)
+        {
+            var filtered = _danhSachNCC
+                .Where(ncc => ncc.TenNCC.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0
+                           || ncc.DienThoai.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0)
+                .ToList();
+
+            listBoxSuggestions.Items.Clear();
+
+            foreach (var ncc in filtered)
             {
-                MaNCC = ncc.MaNCC,
-                TenHienThi = $"{ncc.MaNCC} - {ncc.TenNCC}"
-            }).ToList();
+                var item = new MaterialListBoxItem($"{ncc.TenNCC} - {ncc.DienThoai}");
+                item.Tag = ncc.MaNCC;
+                listBoxSuggestions.Items.Add(item);
+            }
 
-            cbMaNCC.DataSource = null; // Xóa DataSource cũ
-            cbMaNCC.DisplayMember = "TenHienThi";  // Hiển thị cả mã và tên
-            cbMaNCC.ValueMember = "MaNCC";       // Giá trị vẫn là mã nhà cung cấp
-            cbMaNCC.DataSource = danhSachHienThi; // Gán DataSource mới
+            listBoxSuggestions.Visible = filtered.Any();
+        }
+
+        private void ListBoxSuggestions_SelectedIndexChanged(object sender, MaterialListBoxItem selectedItem)
+        {
+            if (selectedItem != null)
+            {
+                // Lấy mã NCC từ Tag để gán lên textbox
+                string maNCC = selectedItem.Tag?.ToString() ?? "";
+
+                txtNCC.Text = maNCC;
+
+                listBoxSuggestions.Visible = false;
+
+                txtNCC.Focus();
+                txtNCC.SelectionStart = txtNCC.Text.Length;
+            }
         }
 
         private void btnThemSP_Click(object sender, EventArgs e)
@@ -203,12 +278,21 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
             try
             {
-                if (cbMaNCC.SelectedValue == null)
+                if (string.IsNullOrEmpty(txtNCC.Text.Trim()))
                 {
                     MessageBox.Show("Vui lòng chọn nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string maNCC = cbMaNCC.SelectedValue.ToString();
+                string maNCC = txtNCC.Text.Trim();
+
+                var ncc = _nccBUS.GetById(maNCC);
+                if (ncc == null)
+                {
+                    MessageBox.Show("Không tìm thấy nhà cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtNCC.Clear();
+                    listBoxSuggestions.Visible = false;
+                    return;
+                }
 
                 decimal giamGia = numGiamGia.Value;
                 if (giamGia < 0 || giamGia > 100)

@@ -49,7 +49,7 @@
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.lblSoLuong = new MaterialSkin.Controls.MaterialLabel();
             this.btnXoa = new MaterialSkin.Controls.MaterialButton();
-            this.cbMaNCC = new System.Windows.Forms.ComboBox();
+            this.txtNCC = new MaterialSkin.Controls.MaterialTextBox2();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.rtxtTimKiem = new System.Windows.Forms.RichTextBox();
             this.btnTimKiem = new MaterialSkin.Controls.MaterialButton();
@@ -85,14 +85,14 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.407407F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.555555F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.407407F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.407407F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 583);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 673);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // lblTitle1
@@ -101,7 +101,7 @@
             this.lblTitle1.AutoSize = true;
             this.lblTitle1.Depth = 0;
             this.lblTitle1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblTitle1.Location = new System.Drawing.Point(4, 7);
+            this.lblTitle1.Location = new System.Drawing.Point(4, 8);
             this.lblTitle1.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTitle1.Name = "lblTitle1";
             this.lblTitle1.Size = new System.Drawing.Size(152, 19);
@@ -114,7 +114,7 @@
             this.lblTitle2.AutoSize = true;
             this.lblTitle2.Depth = 0;
             this.lblTitle2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblTitle2.Location = new System.Drawing.Point(4, 274);
+            this.lblTitle2.Location = new System.Drawing.Point(4, 316);
             this.lblTitle2.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTitle2.Name = "lblTitle2";
             this.lblTitle2.Size = new System.Drawing.Size(62, 19);
@@ -137,13 +137,13 @@
             this.materialListView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialListView1.FullRowSelect = true;
             this.materialListView1.HideSelection = false;
-            this.materialListView1.Location = new System.Drawing.Point(4, 79);
+            this.materialListView1.Location = new System.Drawing.Point(4, 92);
             this.materialListView1.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView1.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(786, 185);
+            this.materialListView1.Size = new System.Drawing.Size(786, 213);
             this.materialListView1.TabIndex = 2;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -189,13 +189,13 @@
             this.materialListView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialListView2.FullRowSelect = true;
             this.materialListView2.HideSelection = false;
-            this.materialListView2.Location = new System.Drawing.Point(4, 346);
+            this.materialListView2.Location = new System.Drawing.Point(4, 400);
             this.materialListView2.MinimumSize = new System.Drawing.Size(200, 100);
             this.materialListView2.MouseLocation = new System.Drawing.Point(-1, -1);
             this.materialListView2.MouseState = MaterialSkin.MouseState.OUT;
             this.materialListView2.Name = "materialListView2";
             this.materialListView2.OwnerDraw = true;
-            this.materialListView2.Size = new System.Drawing.Size(786, 185);
+            this.materialListView2.Size = new System.Drawing.Size(786, 213);
             this.materialListView2.TabIndex = 3;
             this.materialListView2.UseCompatibleStateImageBehavior = false;
             this.materialListView2.View = System.Windows.Forms.View.Details;
@@ -241,14 +241,14 @@
             this.tableLayoutPanel2.Controls.Add(this.numSoLuong, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lblSoLuong, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnXoa, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cbMaNCC, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtNCC, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 300);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 343);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(792, 42);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(792, 53);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // btnThemSP
@@ -259,12 +259,12 @@
             this.btnThemSP.Depth = 0;
             this.btnThemSP.HighEmphasis = true;
             this.btnThemSP.Icon = null;
-            this.btnThemSP.Location = new System.Drawing.Point(610, 6);
+            this.btnThemSP.Location = new System.Drawing.Point(610, 8);
             this.btnThemSP.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnThemSP.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnThemSP.Size = new System.Drawing.Size(163, 30);
+            this.btnThemSP.Size = new System.Drawing.Size(163, 36);
             this.btnThemSP.TabIndex = 3;
             this.btnThemSP.Text = "Thêm vào hóa đơn";
             this.btnThemSP.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -276,7 +276,7 @@
             // 
             this.numSoLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numSoLuong.Location = new System.Drawing.Point(453, 8);
+            this.numSoLuong.Location = new System.Drawing.Point(453, 13);
             this.numSoLuong.Name = "numSoLuong";
             this.numSoLuong.Size = new System.Drawing.Size(120, 26);
             this.numSoLuong.TabIndex = 2;
@@ -292,7 +292,7 @@
             this.lblSoLuong.AutoSize = true;
             this.lblSoLuong.Depth = 0;
             this.lblSoLuong.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblSoLuong.Location = new System.Drawing.Point(360, 11);
+            this.lblSoLuong.Location = new System.Drawing.Point(360, 17);
             this.lblSoLuong.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblSoLuong.Name = "lblSoLuong";
             this.lblSoLuong.Size = new System.Drawing.Size(69, 19);
@@ -307,12 +307,12 @@
             this.btnXoa.Depth = 0;
             this.btnXoa.HighEmphasis = true;
             this.btnXoa.Icon = null;
-            this.btnXoa.Location = new System.Drawing.Point(272, 6);
+            this.btnXoa.Location = new System.Drawing.Point(272, 8);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnXoa.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnXoa.Size = new System.Drawing.Size(64, 30);
+            this.btnXoa.Size = new System.Drawing.Size(64, 36);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -320,15 +320,34 @@
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // cbMaNCC
+            // txtNCC
             // 
-            this.cbMaNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cbMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMaNCC.FormattingEnabled = true;
-            this.cbMaNCC.Location = new System.Drawing.Point(10, 7);
-            this.cbMaNCC.Name = "cbMaNCC";
-            this.cbMaNCC.Size = new System.Drawing.Size(233, 28);
-            this.cbMaNCC.TabIndex = 4;
+            this.txtNCC.AnimateReadOnly = false;
+            this.txtNCC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtNCC.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtNCC.Depth = 0;
+            this.txtNCC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNCC.HideSelection = true;
+            this.txtNCC.LeadingIcon = null;
+            this.txtNCC.Location = new System.Drawing.Point(3, 3);
+            this.txtNCC.MaxLength = 32767;
+            this.txtNCC.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtNCC.Name = "txtNCC";
+            this.txtNCC.PasswordChar = '\0';
+            this.txtNCC.PrefixSuffixText = null;
+            this.txtNCC.ReadOnly = false;
+            this.txtNCC.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtNCC.SelectedText = "";
+            this.txtNCC.SelectionLength = 0;
+            this.txtNCC.SelectionStart = 0;
+            this.txtNCC.ShortcutsEnabled = true;
+            this.txtNCC.Size = new System.Drawing.Size(247, 48);
+            this.txtNCC.TabIndex = 4;
+            this.txtNCC.TabStop = false;
+            this.txtNCC.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtNCC.TrailingIcon = null;
+            this.txtNCC.UseSystemPasswordChar = false;
             // 
             // tableLayoutPanel3
             // 
@@ -340,19 +359,19 @@
             this.tableLayoutPanel3.Controls.Add(this.btnTimKiem, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnLamMoi, 2, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 33);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 35);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 42);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(792, 53);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // rtxtTimKiem
             // 
             this.rtxtTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rtxtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtTimKiem.Location = new System.Drawing.Point(24, 3);
+            this.rtxtTimKiem.Location = new System.Drawing.Point(24, 8);
             this.rtxtTimKiem.Name = "rtxtTimKiem";
             this.rtxtTimKiem.Size = new System.Drawing.Size(347, 36);
             this.rtxtTimKiem.TabIndex = 1;
@@ -366,12 +385,12 @@
             this.btnTimKiem.Depth = 0;
             this.btnTimKiem.HighEmphasis = true;
             this.btnTimKiem.Icon = null;
-            this.btnTimKiem.Location = new System.Drawing.Point(412, 6);
+            this.btnTimKiem.Location = new System.Drawing.Point(412, 8);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnTimKiem.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnTimKiem.Size = new System.Drawing.Size(86, 30);
+            this.btnTimKiem.Size = new System.Drawing.Size(86, 36);
             this.btnTimKiem.TabIndex = 2;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -387,12 +406,12 @@
             this.btnLamMoi.Depth = 0;
             this.btnLamMoi.HighEmphasis = true;
             this.btnLamMoi.Icon = null;
-            this.btnLamMoi.Location = new System.Drawing.Point(611, 6);
+            this.btnLamMoi.Location = new System.Drawing.Point(611, 8);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLamMoi.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnLamMoi.Size = new System.Drawing.Size(83, 30);
+            this.btnLamMoi.Size = new System.Drawing.Size(83, 36);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -414,12 +433,12 @@
             this.tableLayoutPanel4.Controls.Add(this.numGiamGia, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.btnTinhGiamGia, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(1, 535);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(1, 617);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(792, 47);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(792, 55);
             this.tableLayoutPanel4.TabIndex = 6;
             // 
             // lblGiamGia
@@ -428,7 +447,7 @@
             this.lblGiamGia.AutoSize = true;
             this.lblGiamGia.Depth = 0;
             this.lblGiamGia.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblGiamGia.Location = new System.Drawing.Point(7, 14);
+            this.lblGiamGia.Location = new System.Drawing.Point(7, 18);
             this.lblGiamGia.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblGiamGia.Name = "lblGiamGia";
             this.lblGiamGia.Size = new System.Drawing.Size(96, 19);
@@ -443,12 +462,12 @@
             this.btnLuu.Depth = 0;
             this.btnLuu.HighEmphasis = true;
             this.btnLuu.Icon = null;
-            this.btnLuu.Location = new System.Drawing.Point(699, 6);
+            this.btnLuu.Location = new System.Drawing.Point(699, 9);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnLuu.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnLuu.Size = new System.Drawing.Size(64, 35);
+            this.btnLuu.Size = new System.Drawing.Size(64, 36);
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -462,7 +481,7 @@
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Depth = 0;
             this.lblTongTien.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.lblTongTien.Location = new System.Drawing.Point(381, 14);
+            this.lblTongTien.Location = new System.Drawing.Point(381, 18);
             this.lblTongTien.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(72, 19);
@@ -473,7 +492,7 @@
             // 
             this.numGiamGia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.numGiamGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numGiamGia.Location = new System.Drawing.Point(138, 10);
+            this.numGiamGia.Location = new System.Drawing.Point(138, 14);
             this.numGiamGia.Name = "numGiamGia";
             this.numGiamGia.Size = new System.Drawing.Size(102, 26);
             this.numGiamGia.TabIndex = 4;
@@ -486,12 +505,12 @@
             this.btnTinhGiamGia.Depth = 0;
             this.btnTinhGiamGia.HighEmphasis = true;
             this.btnTinhGiamGia.Icon = null;
-            this.btnTinhGiamGia.Location = new System.Drawing.Point(291, 6);
+            this.btnTinhGiamGia.Location = new System.Drawing.Point(291, 9);
             this.btnTinhGiamGia.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnTinhGiamGia.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnTinhGiamGia.Name = "btnTinhGiamGia";
             this.btnTinhGiamGia.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnTinhGiamGia.Size = new System.Drawing.Size(64, 35);
+            this.btnTinhGiamGia.Size = new System.Drawing.Size(64, 36);
             this.btnTinhGiamGia.TabIndex = 5;
             this.btnTinhGiamGia.Text = "Tính";
             this.btnTinhGiamGia.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -503,7 +522,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 650);
+            this.ClientSize = new System.Drawing.Size(800, 740);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "NhapHang";
             this.Text = "Nhập Hàng";
@@ -545,7 +564,6 @@
         private System.Windows.Forms.NumericUpDown numSoLuong;
         private MaterialSkin.Controls.MaterialLabel lblSoLuong;
         private MaterialSkin.Controls.MaterialButton btnXoa;
-        private System.Windows.Forms.ComboBox cbMaNCC;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.RichTextBox rtxtTimKiem;
         private MaterialSkin.Controls.MaterialButton btnTimKiem;
@@ -556,5 +574,6 @@
         private MaterialSkin.Controls.MaterialLabel lblTongTien;
         private System.Windows.Forms.NumericUpDown numGiamGia;
         private MaterialSkin.Controls.MaterialButton btnTinhGiamGia;
+        private MaterialSkin.Controls.MaterialTextBox2 txtNCC;
     }
 }

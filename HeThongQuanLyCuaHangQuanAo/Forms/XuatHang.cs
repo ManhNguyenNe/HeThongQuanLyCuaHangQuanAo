@@ -9,12 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeThongQuanLyCuaHangQuanAo.BUS;
 using HeThongQuanLyCuaHangQuanAo.Models;
+using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace HeThongQuanLyCuaHangQuanAo.Forms
 {
     public partial class XuatHang : MaterialForm
     {
+        private MaterialListBox listBoxSuggestions;
+        private List<KhachHang> _danhSachKH; // lưu danh sách Khách hàng gốc
+
         private SanPhamBUS _sanPhamBUS = new SanPhamBUS();
         private HDBanBUS _hdbBUS = new HDBanBUS();
         private ChiTietHDBanBUS _chiTietHDBanBUS = new ChiTietHDBanBUS();
@@ -26,14 +30,58 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         public XuatHang()
         {
             InitializeComponent();
+
+            listBoxSuggestions = new MaterialListBox
+            {
+                Width = txtKH.Width,
+                Height = 200,
+                Visible = false
+            };
+
+            this.Controls.Add(listBoxSuggestions);
+            listBoxSuggestions.BringToFront();
+
+            // Sự kiện hiển thị khi focus vào TextBox
+            txtKH.GotFocus += (s, e) =>
+            {
+                listBoxSuggestions.Visible = true;
+            };
+
+            // Ẩn listBoxSuggestions khi txtSDTNCC hoặc listBoxSuggestions mất focus
+            txtKH.LostFocus += (s, e) => HideListBoxIfFocusLost();
+            listBoxSuggestions.LostFocus += (s, e) => HideListBoxIfFocusLost();
+
+            listBoxSuggestions.SelectedIndexChanged += ListBoxSuggestions_SelectedIndexChanged;
+
+
+            // Bắt sự kiện gõ trong textbox để lọc listbox
+            txtKH.TextChanged += (s, e) =>
+            {
+                UpdateSuggestionList(txtKH.Text);
+            };
         }
 
         private void XuatHang_Load(object sender, EventArgs e)
         {
+            Point screenPos = txtKH.PointToScreen(Point.Empty);
+            Point posInForm = this.PointToClient(screenPos);
+            listBoxSuggestions.Location = new Point(posInForm.X, posInForm.Y + txtKH.Height);
+
             LoadSanPham();
             LoadKhachHang();
             UpdateTongTien();
             numGiamGia.Value = 0;
+        }
+
+        private void HideListBoxIfFocusLost()
+        {
+            this.BeginInvoke(new Action(() =>
+            {
+                if (!txtKH.Focused && !listBoxSuggestions.Focused)
+                {
+                    listBoxSuggestions.Visible = false;
+                }
+            }));
         }
 
         private void LoadSanPham()
@@ -54,19 +102,45 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
         private void LoadKhachHang()
         {
-            var danhSachKhachHang = _khachHangBUS.GetAll();
+            _danhSachKH = _khachHangBUS.GetAll();
 
-            // Tạo danh sách mới với các đối tượng ẩn danh
-            var danhSachHienThi = danhSachKhachHang.Select(kh => new
+            UpdateSuggestionList("");
+            listBoxSuggestions.Visible = false; // Ẩn listBox lúc form mới load
+        }
+
+        private void UpdateSuggestionList(string filter)
+        {
+            var filtered = _danhSachKH
+                .Where(kh => kh.TenKhach.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0
+                           || kh.DienThoai.IndexOf(filter, StringComparison.OrdinalIgnoreCase) >= 0)
+                .ToList();
+
+            listBoxSuggestions.Items.Clear();
+
+            foreach (var kh in filtered)
             {
-                MaKhach = kh.MaKhach,
-                TenHienThi = $"{kh.MaKhach} - {kh.TenKhach}"
-            }).ToList();
+                var item = new MaterialListBoxItem($"{kh.TenKhach} - {kh.DienThoai}");
+                item.Tag = kh.MaKhach;
+                listBoxSuggestions.Items.Add(item);
+            }
 
-            cbMaKH.DataSource = null; // Xóa DataSource cũ
-            cbMaKH.DisplayMember = "TenHienThi";  // Hiển thị cả mã và tên
-            cbMaKH.ValueMember = "MaKhach";       // Giá trị vẫn là mã khách hàng
-            cbMaKH.DataSource = danhSachHienThi; // Gán DataSource mới
+            listBoxSuggestions.Visible = filtered.Any();
+        }
+
+        private void ListBoxSuggestions_SelectedIndexChanged(object sender, MaterialListBoxItem selectedItem)
+        {
+            if (selectedItem != null)
+            {
+                // Lấy mã KH từ Tag để gán lên textbox
+                string maKH = selectedItem.Tag?.ToString() ?? "";
+
+                txtKH.Text = maKH;
+
+                listBoxSuggestions.Visible = false;
+
+                txtKH.Focus();
+                txtKH.SelectionStart = txtKH.Text.Length;
+            }
         }
 
         private void btnThemSP_Click(object sender, EventArgs e)
@@ -214,13 +288,21 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
 
             try
             {
-                // Lấy thông tin khách hàng
-                if (cbMaKH.SelectedValue == null)
+                if (string.IsNullOrEmpty(txtKH.Text.Trim()))
                 {
                     MessageBox.Show("Vui lòng chọn khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                string maKhachHang = cbMaKH.SelectedValue.ToString();
+                string maKH = txtKH.Text.Trim();
+
+                var ncc = _khachHangBUS.GetById(maKH);
+                if (ncc == null)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtKH.Clear();
+                    listBoxSuggestions.Visible = false;
+                    return;
+                }
 
                 // Lấy thông tin giảm giá
                 decimal giamGia = numGiamGia.Value;
@@ -244,7 +326,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                 }
 
                 // Lưu hóa đơn và chi tiết hóa đơn
-                bool success = _hdbBUS.TaoHoaDonBan(_maNhanVien, maKhachHang, giamGia, chiTietList);
+                bool success = _hdbBUS.TaoHoaDonBan(_maNhanVien, maKH, giamGia, chiTietList);
 
                 if (success)
                 {
