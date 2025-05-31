@@ -32,8 +32,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
             JOIN Mau m ON sp.MaMau = m.MaMau
             JOIN DoiTuong dt ON sp.MaDoiTuong = dt.MaDoiTuong
             JOIN Mua mu ON sp.MaMua = mu.MaMua
-            JOIN NoiSanXuat nsx ON sp.MaNSX = nsx.MaNSX
-            WHERE TinhTrang = 1";
+            JOIN NoiSanXuat nsx ON sp.MaNSX = nsx.MaNSX";
 
                 conn.Open();
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -145,11 +144,11 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                 INSERT INTO SanPham (
                     MaQuanAo, TenQuanAo, MaLoai, MaCo, MaChatLieu, 
                     MaMau, MaDoiTuong, MaMua, MaNSX, SoLuong, 
-                    Anh, DonGiaNhap, DonGiaBan, TinhTrang
+                    Anh, DonGiaNhap, DonGiaBan
                 ) VALUES (
                     @MaQuanAo, @TenQuanAo, @MaLoai, @MaCo, @MaChatLieu,
                     @MaMau, @MaDoiTuong, @MaMua, @MaNSX, 0,
-                    @Anh, @DonGiaNhap, @DonGiaBan, 1
+                    @Anh, @DonGiaNhap, @DonGiaBan
                 )";
 
             using (SqlConnection conn = DBHelper.GetConnection())
@@ -201,7 +200,7 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
         SELECT 
             MaQuanAo, TenQuanAo, MaLoai, MaCo, MaChatLieu, 
             MaMau, MaDoiTuong, MaMua, MaNSX, SoLuong, 
-            Anh, DonGiaNhap, DonGiaBan, TinhTrang
+            Anh, DonGiaNhap, DonGiaBan
         FROM SanPham
         WHERE MaQuanAo = @MaQuanAo";
 
@@ -229,7 +228,6 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
                             Anh = reader["Anh"].ToString(),
                             DonGiaNhap = Convert.ToDecimal(reader["DonGiaNhap"]),
                             DonGiaBan = Convert.ToDecimal(reader["DonGiaBan"]),
-                            TinhTrang = Convert.ToBoolean(reader["TinhTrang"])
                         };
                     }
                 }
@@ -304,14 +302,13 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
             JOIN DoiTuong dt ON sp.MaDoiTuong = dt.MaDoiTuong
             JOIN Mua mu ON sp.MaMua = mu.MaMua
             JOIN NoiSanXuat nsx ON sp.MaNSX = nsx.MaNSX
-            WHERE TinhTrang = 1 AND (
+            WHERE
                 sp.MaQuanAo LIKE @TuKhoa OR
                 sp.TenQuanAo LIKE @TuKhoa OR
                 tl.TenLoai LIKE @TuKhoa OR
                 c.TenCo LIKE @TuKhoa OR
                 cl.TenChatLieu LIKE @TuKhoa OR
-                m.TenMau LIKE @TuKhoa
-            )";
+                m.TenMau LIKE @TuKhoa";
 
                 cmd.Parameters.AddWithValue("@TuKhoa", "%" + tuKhoa + "%");
 
