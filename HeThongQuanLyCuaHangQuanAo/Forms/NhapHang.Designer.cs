@@ -329,6 +329,7 @@
             this.txtNCC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtNCC.HideSelection = true;
+            this.txtNCC.Hint = "Tìm kiếm NCC";
             this.txtNCC.LeadingIcon = null;
             this.txtNCC.Location = new System.Drawing.Point(3, 3);
             this.txtNCC.MaxLength = 32767;

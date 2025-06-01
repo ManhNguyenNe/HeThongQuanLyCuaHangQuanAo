@@ -45,6 +45,7 @@
             this.clnGia2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clnSoLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtKH = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnThemSP = new MaterialSkin.Controls.MaterialButton();
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.lblSoLuong = new MaterialSkin.Controls.MaterialLabel();
@@ -59,7 +60,6 @@
             this.lblTongTien = new MaterialSkin.Controls.MaterialLabel();
             this.numGiamGia = new System.Windows.Forms.NumericUpDown();
             this.btnTinhGiamGia = new MaterialSkin.Controls.MaterialButton();
-            this.txtKH = new MaterialSkin.Controls.MaterialTextBox2();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
@@ -250,6 +250,36 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(792, 53);
             this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // txtKH
+            // 
+            this.txtKH.AnimateReadOnly = false;
+            this.txtKH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtKH.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtKH.Depth = 0;
+            this.txtKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtKH.HideSelection = true;
+            this.txtKH.Hint = "Tìm kiếm khách hàng";
+            this.txtKH.LeadingIcon = null;
+            this.txtKH.Location = new System.Drawing.Point(3, 3);
+            this.txtKH.MaxLength = 32767;
+            this.txtKH.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtKH.Name = "txtKH";
+            this.txtKH.PasswordChar = '\0';
+            this.txtKH.PrefixSuffixText = null;
+            this.txtKH.ReadOnly = false;
+            this.txtKH.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtKH.SelectedText = "";
+            this.txtKH.SelectionLength = 0;
+            this.txtKH.SelectionStart = 0;
+            this.txtKH.ShortcutsEnabled = true;
+            this.txtKH.Size = new System.Drawing.Size(247, 48);
+            this.txtKH.TabIndex = 5;
+            this.txtKH.TabStop = false;
+            this.txtKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtKH.TrailingIcon = null;
+            this.txtKH.UseSystemPasswordChar = false;
             // 
             // btnThemSP
             // 
@@ -488,35 +518,6 @@
             this.btnTinhGiamGia.UseAccentColor = false;
             this.btnTinhGiamGia.UseVisualStyleBackColor = true;
             this.btnTinhGiamGia.Click += new System.EventHandler(this.btnTinhGiamGia_Click);
-            // 
-            // txtKH
-            // 
-            this.txtKH.AnimateReadOnly = false;
-            this.txtKH.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtKH.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtKH.Depth = 0;
-            this.txtKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtKH.HideSelection = true;
-            this.txtKH.LeadingIcon = null;
-            this.txtKH.Location = new System.Drawing.Point(3, 3);
-            this.txtKH.MaxLength = 32767;
-            this.txtKH.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtKH.Name = "txtKH";
-            this.txtKH.PasswordChar = '\0';
-            this.txtKH.PrefixSuffixText = null;
-            this.txtKH.ReadOnly = false;
-            this.txtKH.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtKH.SelectedText = "";
-            this.txtKH.SelectionLength = 0;
-            this.txtKH.SelectionStart = 0;
-            this.txtKH.ShortcutsEnabled = true;
-            this.txtKH.Size = new System.Drawing.Size(247, 48);
-            this.txtKH.TabIndex = 5;
-            this.txtKH.TabStop = false;
-            this.txtKH.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtKH.TrailingIcon = null;
-            this.txtKH.UseSystemPasswordChar = false;
             // 
             // XuatHang
             // 
