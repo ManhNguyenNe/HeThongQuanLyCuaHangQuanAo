@@ -124,20 +124,6 @@ namespace HeThongQuanLyCuaHangQuanAo.DAL
             return spView;
         }
 
-        public bool DeleteSanPham(string maQuanAo)
-        {
-            string query = "UPDATE SanPham SET TinhTrang = 0 WHERE MaQuanAo = @MaQuanAo";
-
-            using (SqlConnection conn = DBHelper.GetConnection())
-            using (SqlCommand cmd = new SqlCommand(query, conn))
-            {
-                cmd.Parameters.AddWithValue("@MaQuanAo", maQuanAo);
-                conn.Open();
-                int rows = cmd.ExecuteNonQuery();
-                return rows > 0;
-            }
-        }
-
         public bool InsertSanPham(SanPham sp)
         {
             string query = @"

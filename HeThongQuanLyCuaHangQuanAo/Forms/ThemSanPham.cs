@@ -100,7 +100,6 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
                     DonGiaNhapStr = txtDonGiaNhap.Text,
                     DonGiaBanStr = txtDonGiaBan.Text,
                     Anh = _selectedImagePath ?? "", // Sử dụng đường dẫn ảnh đã chọn
-                    TinhTrang = true
                 };
 
                 // Lưu sản phẩm

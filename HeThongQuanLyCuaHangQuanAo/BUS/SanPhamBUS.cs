@@ -24,11 +24,6 @@ namespace HeThongQuanLyCuaHangQuanAo.BUS
             return dal.GetSanPhamViewById(maQuanAo);
         }
 
-        public bool XoaSanPham(string maQuanAo)
-        {
-            return dal.DeleteSanPham(maQuanAo);
-        }
-
         // Dùng trước khi thêm hoặc cập nhật
         public bool ValidateSanPham(SanPham sp, bool check)
         {

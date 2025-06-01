@@ -73,34 +73,6 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (materialListView1.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn sản phẩm cần xóa.");
-                return;
-            }
-
-            var result = MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận", MessageBoxButtons.YesNo);
-            if (result != DialogResult.Yes) return;
-
-            // Lấy mã sản phẩm từ dòng được chọn
-            string maQuanAo = materialListView1.SelectedItems[0].Text;
-
-            // Gọi BUS để xóa
-            bool xoaThanhCong = sanPhamBUS.XoaSanPham(maQuanAo);
-
-            if (xoaThanhCong)
-            {
-                MessageBox.Show("Xóa thành công!");
-                LoadData();
-            }
-            else
-            {
-                MessageBox.Show("Xóa thất bại.");
-            }
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             var formThem = new ThemSanPham();

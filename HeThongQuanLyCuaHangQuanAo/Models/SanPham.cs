@@ -23,6 +23,5 @@ namespace HeThongQuanLyCuaHangQuanAo.Models
         public string DonGiaBanStr { get; set; }
         public decimal DonGiaNhap { get; set; }
         public decimal DonGiaBan { get; set; }
-        public bool TinhTrang { get; set; }
     }
 }
