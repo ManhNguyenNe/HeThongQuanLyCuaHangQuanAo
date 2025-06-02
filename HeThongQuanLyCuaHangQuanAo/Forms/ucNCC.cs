@@ -23,6 +23,7 @@ namespace HeThongQuanLyCuaHangQuanAo.Forms
         {
             var danhSach = nccBUS.GetAll();
             materialListView1.Items.Clear();
+            
             foreach (var ncc in danhSach)
             {
                 var item = new ListViewItem(ncc.MaNCC);
